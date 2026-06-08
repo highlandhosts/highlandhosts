@@ -1,0 +1,39 @@
+:root {
+  color-scheme: light;
+  --background: #ffffff;
+  --foreground: #1F3F4A;
+  --border-color: #C8BFAE;
+  --placeholder-bg: #E7E1D6;
+  --text-muted: #666;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: clip;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-style: normal;
+}
+

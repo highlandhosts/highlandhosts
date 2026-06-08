@@ -1,0 +1,26 @@
+{
+  "moduleFileExtensions": ["js", "json", "ts"],
+  "rootDir": "..",
+  "testEnvironment": "node",
+  "testRegex": ".e2e-spec.ts$",
+  "setupFiles": ["<rootDir>/setup-jest.mjs"],
+  "transform": {
+    "^.+\\.(t|j)s$": "ts-jest"
+  },
+  "moduleNameMapper": {
+    "^@/skye-hosts-api/(.*)$": "<rootDir>/src/skye-hosts-api/$1",
+    "^@/common/(.*)$": "<rootDir>/src/common/$1",
+    "^@/skye-hosts-api-client/(.*)$": "<rootDir>/src/skye-hosts-api-client/$1",
+    "^@/config/(.*)$": "<rootDir>/src/config/$1",
+    "^@/constants/(.*)$": "<rootDir>/src/constants/$1",
+    "^@/database/(.*)$": "<rootDir>/src/database/$1",
+    "^@/decorators/(.*)$": "<rootDir>/src/decorators/$1",
+    "^@/exceptions/(.*)$": "<rootDir>/src/exceptions/$1",
+    "^@/filters/(.*)$": "<rootDir>/src/filters/$1",
+    "^@/generated/(.*)$": "<rootDir>/src/generated/$1",
+    "^@/guards/(.*)$": "<rootDir>/src/guards/$1",
+    "^@/interceptors/(.*)$": "<rootDir>/src/interceptors/$1",
+    "^@/utils/(.*)$": "<rootDir>/src/utils/$1",
+    "^src/(.*)$": "<rootDir>/src/$1"
+  }
+}

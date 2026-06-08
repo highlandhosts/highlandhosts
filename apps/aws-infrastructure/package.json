@@ -1,0 +1,37 @@
+{
+  "name": "@repo/aws-infrastructure",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "clean": "rm -rf cdk.out dist",
+    "bootstrap:production": "CDK_BOOTSTRAP=1 cdk bootstrap --context env=production aws://902917582592/eu-west-1",
+    "build": "tsc -b -v",
+    "lint": "eslint \"{bin,lib}/**/*.ts\"",
+    "synth:qa": "cdk synth --context env=qa",
+    "synth:production": "cdk synth --context env=production",
+    "diff:qa": "cdk diff --context env=qa",
+    "diff:production": "cdk diff --context env=production",
+    "deploy:qa": "cdk deploy --context env=qa",
+    "deploy:production": "cdk deploy --context env=production",
+    "destroy:qa": "cdk destroy --context env=qa",
+    "destroy:production": "cdk destroy --context env=production"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.700.0",
+    "@repo/skye-hosts-api-client": "workspace:*",
+    "@repo/common": "workspace:*",
+    "aws-cdk-lib": "^2.200.0",
+    "constructs": "^10.4.2"
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "@types/aws-lambda": "^8.10.149",
+    "@types/node": "^24.7.0",
+    "aws-cdk": "^2.200.0",
+    "esbuild": "^0.25.0",
+    "sharp": "^0.33.5",
+    "typescript": "^5.9.3"
+  }
+}
