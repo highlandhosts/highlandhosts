@@ -3,6 +3,7 @@ Manual TODO
 ===========
 - Migrate highlandhosts -> highlandhosts
   - Heroku Postgres is Essential 0, needs upgraded to Essential 1, when live
+  - Cancel old subs for skyehosts
   - Heroku env vars
     - Everyone listed that isn't sent in auto from deploy-prod.yml
   - Github variables pointing to highlandhosts accounts, need HH equivelant created
