@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "999137751997",
+    "project_number": "937540163717",
     "project_id": "highland-hosts",
     "storage_bucket": "highland-hosts.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:999137751997:android:5b7323942ddc07201518d4",
+        "mobilesdk_app_id": "1:937540163717:android:a0157de0d95a2799a331ec",
         "android_client_info": {
           "package_name": "uk.highlandhosts"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyAnWjZgO4r3b2UquxwQe1P1prKx3tjdwsk"
+          "current_key": "AIzaSyCpaVN-gki4NkU8eREE1HM7aDo_9IYVaZ0"
         }
       ],
       "services": {
