@@ -79,8 +79,8 @@ The calendar sync screen displays contextual guidance explaining the available-b
 
 ## Key files
 
-| File                                                                            | Purpose                                            |
-| ------------------------------------------------------------------------------- | -------------------------------------------------- |
+| File                                                                                | Purpose                                            |
+| ----------------------------------------------------------------------------------- | -------------------------------------------------- |
 | `apps/highland-hosts-api/.../calendar-sync/providers/calendar-sync.service.ts`      | `unblockRange()` — transactional block splitting   |
 | `apps/highland-hosts-api/.../calendar-sync/providers/calendar-export.service.ts`    | iCal export — filters out manual blocks            |
 | `apps/highland-hosts-api/.../calendar-sync/controllers/calendar-sync.controller.ts` | `POST .../blocks/unblock-range` endpoint           |
