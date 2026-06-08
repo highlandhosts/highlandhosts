@@ -38,9 +38,9 @@ importers:
       '@repo/common':
         specifier: workspace:*
         version: link:../../packages/common
-      '@repo/skye-hosts-api-client':
+      '@repo/highland-hosts-api-client':
         specifier: workspace:*
-        version: link:../../packages/skye-hosts-api-client
+        version: link:../../packages/highland-hosts-api-client
       aws-cdk-lib:
         specifier: ^2.200.0
         version: 2.241.0(constructs@10.5.1)
@@ -78,9 +78,9 @@ importers:
       '@repo/common':
         specifier: workspace:*
         version: link:../../packages/common
-      '@repo/skye-hosts-api-client':
+      '@repo/highland-hosts-api-client':
         specifier: workspace:*
-        version: link:../../packages/skye-hosts-api-client
+        version: link:../../packages/highland-hosts-api-client
       '@repo/web':
         specifier: workspace:*
         version: link:../../packages/web
@@ -134,14 +134,14 @@ importers:
         specifier: ^5.9.3
         version: 5.9.3
 
-  apps/skye-hosts-admin-website:
+  apps/highland-hosts-admin-website:
     dependencies:
       '@repo/common':
         specifier: workspace:*
         version: link:../../packages/common
-      '@repo/skye-hosts-api-client':
+      '@repo/highland-hosts-api-client':
         specifier: workspace:*
-        version: link:../../packages/skye-hosts-api-client
+        version: link:../../packages/highland-hosts-api-client
       '@repo/web':
         specifier: workspace:*
         version: link:../../packages/web
@@ -192,7 +192,7 @@ importers:
         specifier: ^5.9.3
         version: 5.9.3
 
-  apps/skye-hosts-api:
+  apps/highland-hosts-api:
     dependencies:
       '@aws-sdk/client-s3':
         specifier: ^3.1000.0
@@ -233,9 +233,9 @@ importers:
       '@repo/common':
         specifier: workspace:*
         version: link:../../packages/common
-      '@repo/skye-hosts-api-client':
+      '@repo/highland-hosts-api-client':
         specifier: workspace:*
-        version: link:../../packages/skye-hosts-api-client
+        version: link:../../packages/highland-hosts-api-client
       '@sentry/nestjs':
         specifier: ^10.39.0
         version: 10.39.0(@nestjs/common@11.1.14(class-transformer@0.5.1)(class-validator@0.14.3)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.14(@nestjs/common@11.1.14(class-transformer@0.5.1)(class-validator@0.14.3)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/platform-express@11.1.14)(@nestjs/websockets@11.1.14)(reflect-metadata@0.2.2)(rxjs@7.8.2))
@@ -379,7 +379,7 @@ importers:
         specifier: ^5.9.3
         version: 5.9.3
 
-  apps/skye-hosts-app:
+  apps/highland-hosts-app:
     dependencies:
       '@expo-google-fonts/lora':
         specifier: ^0.4.2
@@ -396,9 +396,9 @@ importers:
       '@repo/common':
         specifier: workspace:^
         version: link:../../packages/common
-      '@repo/skye-hosts-api-client':
+      '@repo/highland-hosts-api-client':
         specifier: workspace:*
-        version: link:../../packages/skye-hosts-api-client
+        version: link:../../packages/highland-hosts-api-client
       '@repo/theme':
         specifier: workspace:^
         version: link:../../packages/theme
@@ -533,14 +533,14 @@ importers:
         specifier: ~5.9.2
         version: 5.9.3
 
-  apps/skye-hosts-guest-website:
+  apps/highland-hosts-guest-website:
     dependencies:
       '@repo/common':
         specifier: workspace:*
         version: link:../../packages/common
-      '@repo/skye-hosts-api-client':
+      '@repo/highland-hosts-api-client':
         specifier: workspace:*
-        version: link:../../packages/skye-hosts-api-client
+        version: link:../../packages/highland-hosts-api-client
       '@repo/theme':
         specifier: workspace:^
         version: link:../../packages/theme
@@ -679,7 +679,7 @@ importers:
         specifier: ^8.31.1
         version: 8.56.1(eslint@9.39.3)(typescript@5.9.3)
 
-  packages/skye-hosts-api-client:
+  packages/highland-hosts-api-client:
     dependencies:
       '@repo/common':
         specifier: workspace:^
@@ -799,9 +799,9 @@ importers:
       '@mui/material':
         specifier: '>=5'
         version: 7.3.8(@emotion/react@11.14.0(@types/react@19.2.14)(react@19.2.4))(@emotion/styled@11.14.1(@emotion/react@11.14.0(@types/react@19.2.14)(react@19.2.4))(@types/react@19.2.14)(react@19.2.4))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
-      '@repo/skye-hosts-api-client':
+      '@repo/highland-hosts-api-client':
         specifier: workspace:*
-        version: link:../skye-hosts-api-client
+        version: link:../highland-hosts-api-client
       '@repo/web-components':
         specifier: workspace:^
         version: link:../web-components
@@ -872,9 +872,9 @@ importers:
       '@repo/common':
         specifier: workspace:^
         version: link:../common
-      '@repo/skye-hosts-api-client':
+      '@repo/highland-hosts-api-client':
         specifier: workspace:^
-        version: link:../skye-hosts-api-client
+        version: link:../highland-hosts-api-client
       date-fns:
         specifier: ^4.1.0
         version: 4.1.0

@@ -1,0 +1,76 @@
+{
+  "expo": {
+    "name": "Highland Hosts",
+    "slug": "highland-hosts",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "scheme": "highland-hosts",
+    "splash": {
+      "image": "./assets/logo-square.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "uk.highlandhosts",
+      "associatedDomains": ["applinks:highlandhosts.uk"]
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#789650",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "package": "uk.highlandhosts",
+      "googleServicesFile": "./google-services.json",
+      "intentFilters": [
+        {
+          "action": "VIEW",
+          "autoVerify": true,
+          "data": [
+            {
+              "scheme": "https",
+              "host": "highlandhosts.uk",
+              "pathPrefix": "/invite"
+            }
+          ],
+          "category": ["BROWSABLE", "DEFAULT"]
+        }
+      ]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-dev-client",
+      "./plugins/with-firebase-messaging",
+      [
+        "expo-notifications",
+        {
+          "sounds": []
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "We need access to your photos so you can add images to your listing."
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "a9d0c9ae-43f2-40b8-ab02-1fd9640dc49c"
+      }
+    },
+    "owner": "highlandhosts"
+  }
+}

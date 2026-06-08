@@ -1,6 +1,6 @@
 import "next-auth";
 import "next-auth/jwt";
-import type { UserRole } from "../../../skye-hosts-api-client/src";
+import type { UserRole } from "../../../highland-hosts-api-client/src";
 
 export type { UserRole };
 

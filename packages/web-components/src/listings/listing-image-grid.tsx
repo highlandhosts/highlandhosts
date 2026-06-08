@@ -1,5 +1,5 @@
 import Box from '@mui/material/Box';
-import type { IListingImageDto } from '@repo/skye-hosts-api-client';
+import type { IListingImageDto } from '@repo/highland-hosts-api-client';
 import { getListingImageUrl } from './listing-image-utils';
 
 interface ListingImageGridProps {

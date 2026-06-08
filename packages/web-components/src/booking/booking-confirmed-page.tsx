@@ -8,7 +8,7 @@ import CardContent from '@mui/material/CardContent';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import { formatShortDateRange } from '@repo/common';
-import type { IGetListingResponseDto } from '@repo/skye-hosts-api-client';
+import type { IGetListingResponseDto } from '@repo/highland-hosts-api-client';
 import Link from 'next/link';
 
 export interface BookingConfirmedPageProps {

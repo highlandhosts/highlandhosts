@@ -2,21 +2,21 @@
 
 ## Environment Variables
 
-- Add `APP_LINK_BASE_URL=https://skyehosts.co.uk` to all deployed environments (QA, staging, production)
+- Add `APP_LINK_BASE_URL=https://highlandhosts.uk` to all deployed environments (QA, staging, production)
 
 ## Apple (iOS Universal Links)
 
-- Replace `TEAM_ID` in `apps/skye-hosts-guest-website/app/.well-known/apple-app-site-association/route.ts` with your Apple Developer Team ID
+- Replace `TEAM_ID` in `apps/highland-hosts-guest-website/app/.well-known/apple-app-site-association/route.ts` with your Apple Developer Team ID
   - Find it at: https://developer.apple.com/account → Membership Details
 
 ## Android (App Links)
 
-- Replace `TODO:REPLACE_WITH_SHA256_FINGERPRINT_FROM_PLAY_CONSOLE` in `apps/skye-hosts-guest-website/app/.well-known/assetlinks.json/route.ts` with the SHA-256 fingerprint of your Android signing certificate
+- Replace `TODO:REPLACE_WITH_SHA256_FINGERPRINT_FROM_PLAY_CONSOLE` in `apps/highland-hosts-guest-website/app/.well-known/assetlinks.json/route.ts` with the SHA-256 fingerprint of your Android signing certificate
   - Find it in: Google Play Console → App → Setup → App signing → SHA-256 certificate fingerprint
 
 ## App Store URLs
 
-- Replace `TODO_APP_ID` in `apps/skye-hosts-guest-website/app/invite/page.tsx` with the actual Apple App Store app ID once published
+- Replace `TODO_APP_ID` in `apps/highland-hosts-guest-website/app/invite/page.tsx` with the actual Apple App Store app ID once published
 
 ## Native Rebuild Required
 
@@ -25,8 +25,8 @@
 
 ## Post-Deployment Verification
 
-1. Verify AASA: `curl https://skyehosts.co.uk/.well-known/apple-app-site-association`
-2. Verify assetlinks: `curl https://skyehosts.co.uk/.well-known/assetlinks.json`
+1. Verify AASA: `curl https://highlandhosts.uk/.well-known/apple-app-site-association`
+2. Verify assetlinks: `curl https://highlandhosts.uk/.well-known/assetlinks.json`
 3. Use Apple's validator: https://search.developer.apple.com/appsearch-validation-tool/
 4. Use Google's validator: https://developers.google.com/digital-asset-links/tools/generator
 
@@ -61,5 +61,5 @@ Before building, complete the AASA/assetlinks steps above and deploy them to pro
 
 ## Resend Email Template
 
-- The invite links are now `https://skyehosts.co.uk/invite?token=TOKEN` instead of `skye-hosts://...`
+- The invite links are now `https://highlandhosts.uk/invite?token=TOKEN` instead of `highland-hosts://...`
 - The Resend `co_host_invite` template should work as-is since it uses the `inviteLink` variable, but verify the template renders the https link correctly

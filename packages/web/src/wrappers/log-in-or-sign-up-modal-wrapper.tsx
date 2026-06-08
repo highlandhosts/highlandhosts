@@ -16,7 +16,7 @@ import {
   ISignUpRequestDto,
   SignUpRole,
   fetchApi,
-} from "../../../skye-hosts-api-client/src";
+} from "../../../highland-hosts-api-client/src";
 import { getDisplayError } from "@repo/web-components/forms/get-display-error";
 
 const ROLE_LABELS: Record<SignUpRole, string> = {

@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@repo/web": "workspace:*",
-    "@repo/skye-hosts-api-client": "workspace:*",
+    "@repo/highland-hosts-api-client": "workspace:*",
     "@repo/common": "workspace:*",
     "@repo/web-components": "workspace:*",
     "@sentry/nextjs": "^10",

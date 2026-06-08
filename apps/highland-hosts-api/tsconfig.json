@@ -1,0 +1,22 @@
+{
+  "extends": "@repo/typescript-config/nestjs.json",
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist",
+    "paths": {
+      "@/highland-hosts-api/*": ["src/highland-hosts-api/*"],
+      "@/common/*": ["src/common/*"],
+      "@/highland-hosts-api-client/*": ["src/highland-hosts-api-client/*"],
+      "@/config/*": ["src/config/*"],
+      "@/constants/*": ["src/constants/*"],
+      "@/database/*": ["src/database/*"],
+      "@/decorators/*": ["src/decorators/*"],
+      "@/exceptions/*": ["src/exceptions/*"],
+      "@/filters/*": ["src/filters/*"],
+      "@/generated/*": ["src/generated/*"],
+      "@/guards/*": ["src/guards/*"],
+      "@/interceptors/*": ["src/interceptors/*"],
+      "@/utils/*": ["src/utils/*"]
+    }
+  }
+}

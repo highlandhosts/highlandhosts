@@ -6,7 +6,7 @@ import DialogContent from '@mui/material/DialogContent';
 import Divider from '@mui/material/Divider';
 import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
-import type { CancellationPolicyShortTermId } from '@repo/skye-hosts-api-client';
+import type { CancellationPolicyShortTermId } from '@repo/highland-hosts-api-client';
 import {
   formatCancellationDate,
   getCancellationCutoffs,

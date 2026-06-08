@@ -6,7 +6,7 @@ Create a new email template in the Resend dashboard with ID `co_host_invite`.
 
 ## Template variables
 
-- `inviteLink` — the deep link to accept the invite (e.g. `skye-hosts://co-host/invite-landing?token=...`)
+- `inviteLink` — the deep link to accept the invite (e.g. `highland-hosts://co-host/invite-landing?token=...`)
 - `listingTitle` — the name of the listing
 - `inviterName` — the name of the person who sent the invite
 

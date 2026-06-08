@@ -21,15 +21,15 @@ Twilio Verify sends emails via SendGrid. You need a SendGrid account with a veri
    - Use an existing SendGrid API key, or
    - Create a new SendGrid account via the Twilio Console flow
 3. In SendGrid, ensure you have a **verified sender identity** (either a single sender address or a domain authentication)
-   - Recommended: **Domain Authentication** for `skyehosts.co.uk` or your sending domain
+   - Recommended: **Domain Authentication** for `highlandhosts.uk` or your sending domain
    - Go to SendGrid → Settings → Sender Authentication → Authenticate a Domain
 
 ### 3. Configure the from address and email template
 
 Back in the Twilio Verify email settings:
 
-1. Set **From Name** — e.g. `Skye Hosts`
-2. Set **From Email** — e.g. `noreply@skyehosts.co.uk` (must match your verified SendGrid sender)
+1. Set **From Name** — e.g. `Highland Hosts`
+2. Set **From Email** — e.g. `noreply@highlandhosts.uk` (must match your verified SendGrid sender)
 3. Optionally customise the **Subject** and **email body template** — Twilio provides a default template with the OTP code substituted via `{{otp}}`
 
 ### 4. No code changes needed

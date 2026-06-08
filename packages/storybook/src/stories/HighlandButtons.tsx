@@ -9,7 +9,7 @@ import Typography from "@mui/material/Typography";
 /**
  * Demonstrates the MUI Button variants used across the guest websites,
  * themed to approximately match the host-app (react-native-paper) button
- * roles defined in apps/skye-hosts-app/app/style-guide.tsx.
+ * roles defined in apps/highland-hosts-app/app/style-guide.tsx.
  *
  * Mapping host-app → MUI:
  *   contained primary  → variant="contained" color="primary"   (deepSkyeBlue)
@@ -24,8 +24,8 @@ export function HighlandButtons() {
       <Box>
         <Typography variant="h4">Highland Buttons</Typography>
         <Typography variant="body2" color="text.secondary">
-          MUI Button variants used by skye-hosts-guest-website, themed to match
-          the host-app style guide colors. Plain MUI — no custom overrides
+          MUI Button variants used by highland-hosts-guest-website, themed to
+          match the host-app style guide colors. Plain MUI — no custom overrides
           beyond the palette.
         </Typography>
       </Box>

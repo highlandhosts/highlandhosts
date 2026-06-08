@@ -1,4 +1,4 @@
-import { slugify } from '@repo/skye-hosts-api-client';
+import { slugify } from '@repo/highland-hosts-api-client';
 import {
   GuestCounts,
   serializeBookingSearchParams,

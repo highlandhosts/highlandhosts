@@ -9,15 +9,15 @@ Sign up at https://resend.com and go to **API Keys** to generate a key.
 ## 2. Verify your sending domain
 
 In the Resend dashboard go to **Domains** and add/verify the domain you'll send from
-(e.g. `skyehosts.co.uk`). DNS records will be provided to add to your registrar.
+(e.g. `highlandhosts.uk`). DNS records will be provided to add to your registrar.
 
 ## 3. Add environment variables
 
-Add these to `apps/skye-hosts-api/.env.local` and all environment files (staging, production):
+Add these to `apps/highland-hosts-api/.env.local` and all environment files (staging, production):
 
 ```
 RESEND_API_KEY=re_<your_api_key>
-RESEND_FROM_EMAIL=noreply@skyehosts.co.uk
+RESEND_FROM_EMAIL=noreply@highlandhosts.uk
 ```
 
 `RESEND_DISABLED=true` is set by default in `.env.local.example` — emails are skipped in local
@@ -29,7 +29,7 @@ Go to **Templates** in the Resend dashboard and create one template per event ty
 Each template can use variables with `{{variableName}}` syntax.
 
 The `EmailTemplate` enum values in
-`apps/skye-hosts-api/src/modules/email/enums/email-template.enum.ts`
+`apps/highland-hosts-api/src/modules/email/enums/email-template.enum.ts`
 must match the template IDs from Resend. Once you create each template, copy its ID and update
 the enum:
 

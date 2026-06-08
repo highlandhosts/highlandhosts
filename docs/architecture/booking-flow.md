@@ -15,7 +15,7 @@ Booking page sets `robots: { index: false, follow: false }` and a self-canonical
 
 ## Shared vs app-level split
 
-Both skye-hosts-guest-website and skye-glamping-website share the same React tree via `@repo/web-components`:
+Both highland-hosts-guest-website and skye-glamping-website share the same React tree via `@repo/web-components`:
 
 - **Shared** (`packages/web-components/src/booking/`): `BookingPage`, `BookingReviewSection`, `BookingPaymentSection`, `BookingWizard`, `useQuote`, `booking-params`.
 - **Shared auth modal** (`packages/web-components/src/auth/log-in-or-sign-up-modal.tsx`): presentational, step-driven.
@@ -93,7 +93,7 @@ Because `/payment/process-booking-payment` enqueues an SQS message rather than r
 Deleted as part of this change:
 
 - `packages/web-components/src/listings/listing-confirm-pay-modal.tsx` — the "Lorem ipsum" placeholder modal the Reserve button used to open.
-- `apps/skye-hosts-guest-website/app/listing/[id]/[title]/BookNowButton.tsx` — a dummy button wired to hardcoded dates/price; superseded by the real `/book` page. Its dev-only test-booking affordance now lives in `TestBookingPanel` (see "Dev-only test booking" above).
+- `apps/highland-hosts-guest-website/app/listing/[id]/[title]/BookNowButton.tsx` — a dummy button wired to hardcoded dates/price; superseded by the real `/book` page. Its dev-only test-booking affordance now lives in `TestBookingPanel` (see "Dev-only test booking" above).
 - The "Log in to book" `<Link>` on the listing page — unauthenticated users now hit the Reserve CTA and the modal.
 
 `confirmModalOpen` / `setConfirmModalOpen` fields were dropped from `ListingBookingStateProps` and `useListingBookingState`.

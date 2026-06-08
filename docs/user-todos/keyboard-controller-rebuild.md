@@ -1,4 +1,4 @@
-# Action required: Rebuild skye-hosts-app dev client
+# Action required: Rebuild highland-hosts-app dev client
 
 Added `react-native-keyboard-controller` to fix the soft keyboard obscuring form fields on Android (and to give consistent keyboard handling on iOS too).
 
@@ -8,12 +8,12 @@ This is a **native module**, so the JS-only dev client cannot load it — you mu
 
 1. Build a new dev client:
    ```
-   pnpm --filter skye-hosts-app build:dev:android
-   pnpm --filter skye-hosts-app build:dev:ios
+   pnpm --filter highland-hosts-app build:dev:android
+   pnpm --filter highland-hosts-app build:dev:ios
    ```
    (or `eas-build-local` for a local Android APK)
 2. Install the new dev client on your device(s).
-3. Run `pnpm --filter skye-hosts-app dev` as normal.
+3. Run `pnpm --filter highland-hosts-app dev` as normal.
 
 No env vars or config to add.
 

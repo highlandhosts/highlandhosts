@@ -1,4 +1,4 @@
-import { CancellationPolicyShortTermId } from '@repo/skye-hosts-api-client';
+import { CancellationPolicyShortTermId } from '@repo/highland-hosts-api-client';
 import { format, subDays } from 'date-fns';
 
 const POLICY_DAYS: Record<CancellationPolicyShortTermId, number> = {

@@ -1,9 +1,9 @@
 import {
   ApiRequestError,
   SERVER_ERROR_MESSAGE,
-} from '@repo/skye-hosts-api-client';
+} from '@repo/highland-hosts-api-client';
 
-export { SERVER_ERROR_MESSAGE } from '@repo/skye-hosts-api-client';
+export { SERVER_ERROR_MESSAGE } from '@repo/highland-hosts-api-client';
 
 /**
  * Extract a user-facing message from an unknown caught error.

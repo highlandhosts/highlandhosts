@@ -29,13 +29,13 @@
     "test:e2e": {
       "cache": false
     },
-    "@repo/skye-hosts-api#migration:up": {
+    "@repo/highland-hosts-api#migration:up": {
       "cache": false
     },
-    "@repo/skye-hosts-api#migration:down": {
+    "@repo/highland-hosts-api#migration:down": {
       "cache": false
     },
-    "@repo/skye-hosts-api#migration:generate": {
+    "@repo/highland-hosts-api#migration:generate": {
       "cache": false
     }
   }

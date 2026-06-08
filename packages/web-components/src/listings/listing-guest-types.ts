@@ -80,9 +80,9 @@ export function buildGuestInfoText(
   return text;
 }
 
-import type { IMinNightsByCheckInDay } from '@repo/skye-hosts-api-client';
+import type { IMinNightsByCheckInDay } from '@repo/highland-hosts-api-client';
 
-export type { IMinNightsByCheckInDay } from '@repo/skye-hosts-api-client';
+export type { IMinNightsByCheckInDay } from '@repo/highland-hosts-api-client';
 
 export interface ListingNightRuleProps {
   minNights: number;

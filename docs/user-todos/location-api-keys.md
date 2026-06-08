@@ -13,9 +13,9 @@
 
 | Key                                  | Usage                                                                      | Restriction                                              |
 | ------------------------------------ | -------------------------------------------------------------------------- | -------------------------------------------------------- |
-| `GOOGLE_MAPS_API_KEY`                | Host app (added to `app.config.ts` extra)                                  | Bundle ID restriction: `uk.co.skyehosts` (Android + iOS) |
-| `GOOGLE_MAPS_API_KEY_IOS`            | Replace placeholder in `app.json` > ios > config > googleMapsApiKey        | iOS bundle ID: `uk.co.skyehosts`                         |
-| `GOOGLE_MAPS_API_KEY_ANDROID`        | Replace placeholder in `app.json` > android > config > googleMaps > apiKey | Android package: `uk.co.skyehosts`                       |
+| `GOOGLE_MAPS_API_KEY`                | Host app (added to `app.config.ts` extra)                                  | Bundle ID restriction: `uk.highlandhosts` (Android + iOS) |
+| `GOOGLE_MAPS_API_KEY_IOS`            | Replace placeholder in `app.json` > ios > config > googleMapsApiKey        | iOS bundle ID: `uk.highlandhosts`                         |
+| `GOOGLE_MAPS_API_KEY_ANDROID`        | Replace placeholder in `app.json` > android > config > googleMaps > apiKey | Android package: `uk.highlandhosts`                       |
 | `NEXT_PUBLIC_GOOGLE_MAPS_STATIC_KEY` | Guest website `.env`                                                       | HTTP referrer restriction (your domain)                  |
 
 ## Mapbox

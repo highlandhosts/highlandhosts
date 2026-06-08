@@ -1,6 +1,6 @@
 # Basic Auth — Environment Variables
 
-Temporary basic auth has been added to **skye-hosts-guest-website** and **skye-glamping-website** via Next.js middleware. It only activates when `NEXT_PUBLIC_SKYE_ENVIRONMENT=production`.
+Temporary basic auth has been added to **highland-hosts-guest-website** and **skye-glamping-website** via Next.js middleware. It only activates when `NEXT_PUBLIC_SKYE_ENVIRONMENT=production`.
 
 ## Vercel setup
 

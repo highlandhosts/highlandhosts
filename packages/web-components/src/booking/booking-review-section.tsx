@@ -7,7 +7,7 @@ import CardContent from '@mui/material/CardContent';
 import Divider from '@mui/material/Divider';
 import Typography from '@mui/material/Typography';
 import { formatShortDateRange } from '@repo/common';
-import type { CancellationPolicyShortTermId } from '@repo/skye-hosts-api-client';
+import type { CancellationPolicyShortTermId } from '@repo/highland-hosts-api-client';
 import {
   formatCancellationDate,
   getCancellationCutoffs,

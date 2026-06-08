@@ -10,7 +10,7 @@ import type {
   IListingAmenityCategoryDto,
   IListingAmenityDto,
   ListingAmenityId,
-} from '@repo/skye-hosts-api-client';
+} from '@repo/highland-hosts-api-client';
 import { useMemo, useState } from 'react';
 import { AmenityRow } from './amenity-icon';
 import { ListingAmenitiesModal } from './listing-amenities-modal';

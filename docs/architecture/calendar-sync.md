@@ -25,11 +25,11 @@ There are no explicit enable/disable toggles. State is inferred:
 
 ## Frontend layout
 
-The summary card on the listing edit screen and the dedicated calendar-sync screen both use a shared `CalendarSyncColumns` component (`apps/skye-hosts-app/app/components/calendar-sync-columns.tsx`) to render Import / Export side-by-side per sync. The component stacks vertically below 360px viewport width. The aggregate health dot (also used in the calendar header in `app/calendar/[id].tsx`) reflects the worst of import + export health across all syncs.
+The summary card on the listing edit screen and the dedicated calendar-sync screen both use a shared `CalendarSyncColumns` component (`apps/highland-hosts-app/app/components/calendar-sync-columns.tsx`) to render Import / Export side-by-side per sync. The component stacks vertically below 360px viewport width. The aggregate health dot (also used in the calendar header in `app/calendar/[id].tsx`) reflects the worst of import + export health across all syncs.
 
 ### Health dot semantics
 
-The dot answers a single question for the host: **do I need to act?** The classification lives in `apps/skye-hosts-app/app/utils/sync-status.tsx` and is covered by `sync-status.spec.ts`.
+The dot answers a single question for the host: **do I need to act?** The classification lives in `apps/highland-hosts-app/app/utils/sync-status.tsx` and is covered by `sync-status.spec.ts`.
 
 Per-direction health is collapsed to one of four buckets, then the combined sync health is the worst of `{importHealth, exportHealth}`:
 
@@ -72,7 +72,7 @@ The host must manually paste the export URL into their external platform — Sky
 - Show "Exported {relative time}" in the Export column on the calendar-sync screens.
 - Surface a warning info-box if a sync is older than 24 hours and `lastExportedAt` is still null. This is the primary signal that the host pasted the wrong link, or never pasted it at all, on the external platform.
 
-The 24-hour threshold lives in `apps/skye-hosts-app/app/utils/sync-status.tsx` (`EXPORT_WARNING_AGE_HOURS`). It does NOT detect regression (was exporting, then stopped) — that is left for a future "no exports in 7 days" check.
+The 24-hour threshold lives in `apps/highland-hosts-app/app/utils/sync-status.tsx` (`EXPORT_WARNING_AGE_HOURS`). It does NOT detect regression (was exporting, then stopped) — that is left for a future "no exports in 7 days" check.
 
 ## Auto-disable (import)
 
@@ -100,7 +100,7 @@ The listing card surfaces: _"Import paused after repeated failures. Edit to upda
 
 If a host wants their data back after deletion, they re-add the sync. The next iCal fetch repopulates everything from the source of truth.
 
-The frontend confirm modal (`apps/skye-hosts-app/app/edit-listing/calendar-sync-form.tsx`) shows the count of imported dates that will be removed (using `lastImportEventCount`) and reassures the host that re-adding the calendar will restore them.
+The frontend confirm modal (`apps/highland-hosts-app/app/edit-listing/calendar-sync-form.tsx`) shows the count of imported dates that will be removed (using `lastImportEventCount`) and reassures the host that re-adding the calendar will restore them.
 
 ## Sentry tagging
 

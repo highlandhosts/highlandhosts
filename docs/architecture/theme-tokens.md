@@ -7,7 +7,7 @@ Single source of truth for all design tokens consumed by frontend apps (React Na
 ## Key decisions
 
 - **Palette lives here, not in `@repo/common`** — `@repo/common` is strictly non-UI (app names, environments, date utils). All hex colour values belong in `@repo/theme/palette.ts`.
-- **React Native app re-exports** — `apps/skye-hosts-app/app/theme/spacing.ts` (and border-radius, font-weight) re-export from `@repo/theme` so existing imports (`from "../theme"`) continue to work unchanged.
+- **React Native app re-exports** — `apps/highland-hosts-app/app/theme/spacing.ts` (and border-radius, font-weight) re-export from `@repo/theme` so existing imports (`from "../theme"`) continue to work unchanged.
 - **Typography and line-height stay in the RN app** — these are platform-specific (MUI has its own responsive typography system).
 
 ## Token inventory
@@ -54,7 +54,7 @@ In web apps, `iconDefault` and `iconOnDark` are available via MUI's `custom` pal
 
 ## Web theme: Highland component overrides (guest website)
 
-The guest website's `AppThemeProvider` (`apps/skye-hosts-guest-website/app/components/theme-provider.tsx`) extends the shared `createAppTheme` with Highland-specific MUI component overrides:
+The guest website's `AppThemeProvider` (`apps/highland-hosts-guest-website/app/components/theme-provider.tsx`) extends the shared `createAppTheme` with Highland-specific MUI component overrides:
 
 - **MUI palette overrides**: `error.main` → `rowanBerryLight`, `warning.main` → `autumnBracken`, `success.main` → `successGreen` — so `color="error"` etc. use Highland colours throughout all MUI components.
 - **MUI Alert severity colours**: `standardInfo` → heatherPurple icon + heatherPurpleLight bg, `standardWarning` → autumnBracken + autumnBrackenLight, `standardError` → rowanBerryLight + rowanBerryPale, `standardSuccess` → successGreen + successGreenLight. Matches the React Native app's `InfoBox` component colour language.
@@ -66,7 +66,7 @@ The storybook decorator (`packages/storybook/src/decorators/highland-theme-decor
 
 ## Consumption
 
-- **skye-hosts-app**: re-exports via `app/theme/*.ts` → consumed through `app/theme/index.ts`
-- **skye-hosts-guest-website**: `app/theme/palette.ts` re-exports selected colours from `@repo/theme`; `theme-provider.tsx` adds Highland MUI component overrides
+- **highland-hosts-app**: re-exports via `app/theme/*.ts` → consumed through `app/theme/index.ts`
+- **highland-hosts-guest-website**: `app/theme/palette.ts` re-exports selected colours from `@repo/theme`; `theme-provider.tsx` adds Highland MUI component overrides
 - **storybook**: Highland theme decorator wraps all stories; HighlandAlerts story demonstrates themed Alerts and Links
 - **Future apps**: add `"@repo/theme": "workspace:*"` and import directly

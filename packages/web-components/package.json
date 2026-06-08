@@ -94,7 +94,7 @@
     "@mui/material-nextjs": "^7.3.8",
     "@mui/x-data-grid": "^8.27.1",
     "@repo/common": "workspace:^",
-    "@repo/skye-hosts-api-client": "workspace:^",
+    "@repo/highland-hosts-api-client": "workspace:^",
     "date-fns": "^4.1.0",
     "mapbox-gl": "^3.20.0",
     "react": "^19.1.0",

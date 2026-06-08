@@ -18,5 +18,5 @@ Already handled — `.env.local` has `GOOGLE_MAPS_API_KEY` set.
 
 Restrict the key by:
 
-- **Android**: package name `uk.co.skyehosts` + SHA-1 fingerprint
-- **iOS**: bundle ID `uk.co.skyehosts`
+- **Android**: package name `uk.highlandhosts` + SHA-1 fingerprint
+- **iOS**: bundle ID `uk.highlandhosts`

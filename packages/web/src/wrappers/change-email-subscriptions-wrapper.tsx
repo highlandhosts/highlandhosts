@@ -1,6 +1,6 @@
 "use client";
 
-import { getApiBaseUrl } from "../../../skye-hosts-api-client/src";
+import { getApiBaseUrl } from "../../../highland-hosts-api-client/src";
 import { ChangeEmailSubscriptions } from "@repo/web-components/email-subscriptions/change-email-subscriptions";
 import type { ChangeEmailSubscriptionsValues } from "@repo/web-components/email-subscriptions/change-email-subscriptions";
 import { useCallback } from "react";

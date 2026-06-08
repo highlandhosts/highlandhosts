@@ -1,0 +1,49 @@
+{
+  "cli": {
+    "version": ">= 16.0.0"
+  },
+  "build": {
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal",
+      "env": {
+        "SKYE_ENVIRONMENT": "local",
+        "API_URL": "https://api.highlandhosts.uk",
+        "SHOW_DEV_MENU": "true"
+      }
+    },
+    "preview": {
+      "distribution": "internal",
+      "channel": "preview",
+      "env": {
+        "SKYE_ENVIRONMENT": "production",
+        "API_URL": "https://api.highlandhosts.uk",
+        "LOG_LEVEL": "debug",
+        "SHOW_DEV_MENU": "true"
+      }
+    },
+    "beta": {
+      "distribution": "store",
+      "channel": "production",
+      "autoIncrement": true,
+      "env": {
+        "SKYE_ENVIRONMENT": "production",
+        "API_URL": "https://api.highlandhosts.uk"
+      }
+    },
+    "production": {
+      "channel": "production",
+      "autoIncrement": true,
+      "env": {
+        "SKYE_ENVIRONMENT": "production",
+        "API_URL": "https://api.highlandhosts.uk"
+      }
+    }
+  },
+  "submit": {
+    "production": {
+      "ios": {},
+      "android": {}
+    }
+  }
+}

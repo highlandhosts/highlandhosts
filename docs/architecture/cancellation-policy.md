@@ -7,7 +7,7 @@ Hosts select a short-term cancellation policy for each listing. The policy deter
 ## Data model
 
 - **Column**: `listing.cancellationPolicyShortTerm` — `character varying`, non-nullable, defaults to `5_days`.
-- **Enum**: `CancellationPolicyShortTermId` in `@repo/skye-hosts-api-client` — values: `5_days`, `14_days`, `30_days`.
+- **Enum**: `CancellationPolicyShortTermId` in `@repo/highland-hosts-api-client` — values: `5_days`, `14_days`, `30_days`.
 - Named `*ShortTerm` to leave room for a future `cancellationPolicyLongTerm` column (stays 28+ nights).
 
 ## Options config

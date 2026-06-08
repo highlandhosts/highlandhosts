@@ -14,7 +14,7 @@ import {
   SAFETY_CONSIDERATIONS_CONFIG,
   SAFETY_DEVICES_CONFIG,
   type IGetListingResponseDto,
-} from '@repo/skye-hosts-api-client';
+} from '@repo/highland-hosts-api-client';
 import { useState } from 'react';
 import { AmenityIcon } from './amenity-icon';
 import {

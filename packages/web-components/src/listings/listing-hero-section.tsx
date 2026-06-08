@@ -11,7 +11,7 @@ import {
   type IListingImageDto,
   type ListingSpaceType,
   type ListingTypeId,
-} from '@repo/skye-hosts-api-client';
+} from '@repo/highland-hosts-api-client';
 import { ListingHeroImages } from './listing-hero-images';
 
 export interface ListingReviewSummary {

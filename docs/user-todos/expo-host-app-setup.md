@@ -1,4 +1,4 @@
-# Skye Hosts Host App - Setup Steps
+# Highland Hosts Host App - Setup Steps
 
 ## 1. Install EAS CLI (if not already installed)
 
@@ -14,7 +14,7 @@ eas login
 
 ## 3. Link to an Expo project
 
-From `apps/skye-hosts-app/`, run:
+From `apps/highland-hosts-app/`, run:
 
 ```bash
 eas init
@@ -45,7 +45,7 @@ eas build --profile development --platform android
 Or use Expo Go for quick prototyping:
 
 ```bash
-pnpm --filter skye-hosts-app start
+pnpm --filter highland-hosts-app start
 ```
 
 ## 6. Apple Developer & Google Play setup (for production)
@@ -57,8 +57,8 @@ pnpm --filter skye-hosts-app start
 
 Already configured in `app.json`:
 
-- iOS: `com.skyehosts.host`
-- Android: `com.skyehosts.host`
+- iOS: `uk.highlandhosts.host`
+- Android: `uk.highlandhosts.host`
 
 Change these if you want different identifiers.
 
@@ -67,15 +67,15 @@ Change these if you want different identifiers.
 After deploying the API (or locally), run the migration to add `phoneNumber` column and make `email`/`passwordHash`/`stripeCustomerId` nullable:
 
 ```bash
-pnpm --filter skye-hosts-api migration:up
+pnpm --filter highland-hosts-api migration:up
 ```
 
 ## 9. Running locally
 
 ```bash
 # Start Expo dev server
-pnpm --filter skye-hosts-app start
+pnpm --filter highland-hosts-app start
 
 # Or via turbo
-pnpm dev --filter skye-hosts-app
+pnpm dev --filter highland-hosts-app
 ```

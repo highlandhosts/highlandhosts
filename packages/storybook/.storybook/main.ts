@@ -19,9 +19,9 @@ const config: StorybookConfig = {
     config.resolve = config.resolve ?? {};
     config.resolve.alias = {
       ...config.resolve.alias,
-      "@repo/skye-hosts-api-client": path.resolve(
+      "@repo/highland-hosts-api-client": path.resolve(
         __dirname,
-        "../../skye-hosts-api-client/src/index.ts",
+        "../../highland-hosts-api-client/src/index.ts",
       ),
       "@repo/common": path.resolve(__dirname, "../../common/src/index.ts"),
       "@repo/theme": path.resolve(__dirname, "../../theme/src/index.ts"),

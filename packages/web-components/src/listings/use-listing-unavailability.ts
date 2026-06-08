@@ -3,7 +3,7 @@
 import {
   fetchApi,
   type IGetListingUnavailabilityResponseDto,
-} from '@repo/skye-hosts-api-client';
+} from '@repo/highland-hosts-api-client';
 import { addDays, format } from 'date-fns';
 import { useEffect, useState } from 'react';
 

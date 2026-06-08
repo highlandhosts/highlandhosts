@@ -1,4 +1,4 @@
-import type { IListingImageDto } from '@repo/skye-hosts-api-client';
+import type { IListingImageDto } from '@repo/highland-hosts-api-client';
 
 export function getListingImageUrl(
   image: IListingImageDto,

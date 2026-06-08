@@ -4,10 +4,10 @@
 
 Add `NEXTAUTH_SECRET` to each of these Vercel projects:
 
-- skye-hosts-guest-website
-- skye-hosts-app
+- highland-hosts-guest-website
+- highland-hosts-app
 - skye-glamping-website
-- skye-hosts-admin-website
+- highland-hosts-admin-website
 
 ### Generate the secret
 
@@ -27,7 +27,7 @@ NEXTAUTH_SECRET=<your-generated-secret>
 
 ## Admin website Vercel project
 
-The `skye-hosts-admin-website` app has been scaffolded. You need to:
+The `highland-hosts-admin-website` app has been scaffolded. You need to:
 
 1. Create a new Vercel project for it
 2. Set the `VERCEL_PROJECT_ID_SKYE_GLAMPING_ADMIN` GitHub variable

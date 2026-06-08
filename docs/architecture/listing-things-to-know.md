@@ -23,7 +23,7 @@ The section reuses the `AmenityIcon` component and `mdiIconMap` from `mdi-amenit
 - **House rule icons**: Mapped from Ionicons names to MDI equivalents (e.g. `paw-outline` → `mdiPawOutline`, `moon-outline` → `mdiMoonWaningCrescent`)
 - **Checkout instruction icons**: Mapped from Ionicons names to MDI equivalents (e.g. `trash-outline` → `mdiTrashCanOutline`)
 
-This allows using `config.icon` directly as the lookup key from the shared configs in `@repo/skye-hosts-api-client`.
+This allows using `config.icon` directly as the lookup key from the shared configs in `@repo/highland-hosts-api-client`.
 
 ## File locations
 

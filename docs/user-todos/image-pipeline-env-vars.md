@@ -7,11 +7,11 @@ These are needed when deploying the `ListingImagePipelineStack`:
 - `IMAGE_PROCESSOR_SENTRY_DSN` — Sentry DSN for the image processor Lambda
 - `SQS_FORWARDER_SENTRY_DSN_LAYER_ARN` — (already exists, shared with other Lambdas)
 
-## API (skye-hosts-api)
+## API (highland-hosts-api)
 
 Add these to your `.env.local` / `.env` / deployment config:
 
-- `AWS_S3_IMAGES_BUCKET` — S3 bucket name (e.g. `skye-hosts-images-qa`)
+- `AWS_S3_IMAGES_BUCKET` — S3 bucket name (e.g. `highland-hosts-images-qa`)
 - `AWS_CLOUDFRONT_IMAGES_DOMAIN` — CloudFront distribution domain (e.g. `d1234abcdef.cloudfront.net`)
 - `AWS_SQS_ENVIRONMENT` — (already exists, used for queue name resolution)
 
@@ -26,6 +26,6 @@ Add these to your `.env.local` / `.env` / deployment config:
 Run the TypeORM migration after the API code is deployed:
 
 ```bash
-pnpm --filter=skye-hosts-api migration:generate src/migrations/AddListingImage
-pnpm --filter=skye-hosts-api migration:run
+pnpm --filter=highland-hosts-api migration:generate src/migrations/AddListingImage
+pnpm --filter=highland-hosts-api migration:run
 ```

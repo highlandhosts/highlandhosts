@@ -4,7 +4,7 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import type { IListingImageDto } from '@repo/skye-hosts-api-client';
+import type { IListingImageDto } from '@repo/highland-hosts-api-client';
 import { useRef, useState } from 'react';
 import { FavouriteIconContent } from './favourite-icon-content';
 import { getListingImageUrl } from './listing-image-utils';

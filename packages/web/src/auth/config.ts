@@ -1,4 +1,4 @@
-import { getApiBaseUrl } from "../../../skye-hosts-api-client/src";
+import { getApiBaseUrl } from "../../../highland-hosts-api-client/src";
 import NextAuth from "next-auth";
 import type { NextAuthConfig } from "next-auth";
 import type { NextRequest, NextResponse } from "next/server";

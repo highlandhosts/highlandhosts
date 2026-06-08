@@ -1,11 +1,13 @@
 ===========
 Manual TODO
 ===========
-- Migrate skyehosts -> highlandhosts
-  - Github variables pointing to skyehosts accounts, need HH equivelant created
+- Migrate highlandhosts -> highlandhosts
+  - Heroku Postgres is Essential 0, needs upgraded to Essential 1, when live
+  - Heroku env vars
+    - Everyone listed that isn't sent in auto from deploy-prod.yml
+  - Github variables pointing to highlandhosts accounts, need HH equivelant created
     - EXPO_TOKEN
     - TWILIO_AUTH_TOKEN
-    - HEROKU_API_KEY
     - SQS_FORWARDER_HTTP_SECRET
     - TWILIO_ACCOUNT_SID
     - TWILIO_AUTH_TOKEN
@@ -147,7 +149,7 @@ Post-MVP
 - Solve env vars in apps/f/e better as vercel doesn't support org level env vars
   and dont want repat across projects. but want to keep simple and no anti pattern.
 - Next Steps for You (Cohost)
-  - The invite link deep link (skye-hosts://co-host/invite-landing?token=xxx) works with the existing scheme: "skye-hosts" config. For production, you'll want
+  - The invite link deep link (highland-hosts://co-host/invite-landing?token=xxx) works with the existing scheme: "highland-hosts" config. For production, you'll want
   universal links (HTTPS) too so the link works when the app isn't installed.
   - Email sending is stubbed — the owner shares the invite link manually (Share sheet).
   - The sign-up-via-invite flow collects phone + OTP + name, but doesn't yet set the invitee's email on their account. You'll need a PATCH /account endpoint or add

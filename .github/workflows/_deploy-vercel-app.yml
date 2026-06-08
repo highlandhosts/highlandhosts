@@ -4,7 +4,7 @@ on:
   workflow_call:
     inputs:
       app-name:
-        description: Name of the app (e.g. skye-hosts-guest-website, skye-hosts-admin-website)
+        description: Name of the app (e.g. highland-hosts-guest-website, highland-hosts-admin-website)
         required: true
         type: string
       watch-paths:

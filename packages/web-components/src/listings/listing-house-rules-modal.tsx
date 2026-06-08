@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 import {
   CHECKOUT_INSTRUCTION_OPTIONS,
   type IGetListingResponseDto,
-} from '@repo/skye-hosts-api-client';
+} from '@repo/highland-hosts-api-client';
 import { ListingModalHeader } from './listing-modal-styles';
 import {
   ItemList,

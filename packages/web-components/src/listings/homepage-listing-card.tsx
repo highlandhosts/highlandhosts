@@ -6,7 +6,7 @@ import {
   LISTING_HIGHLIGHT_LABELS,
   LISTING_TYPE_LABELS,
   type IHomepageListingDto,
-} from '@repo/skye-hosts-api-client';
+} from '@repo/highland-hosts-api-client';
 
 import { ListingThumbnail } from './listing-thumbnail';
 

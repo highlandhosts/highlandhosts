@@ -105,14 +105,14 @@ Invite permission rule:
 
 Invite Flow (Deep Linking + Account Handling)
 
-Deep link: skyehosts://co-host-invite/{token}
+Deep link: highlandhosts://co-host-invite/{token}
 
 The owner gets back an invite link after creating the invite. They share it manually (text, WhatsApp, etc.) — we don't send emails/SMS in this phase.
 
 Flow diagram:
 
 Owner creates invite
-→ API returns { inviteLink: "skyehosts://co-host-invite/{token}", ... }
+→ API returns { inviteLink: "highlandhosts://co-host-invite/{token}", ... }
 → Owner shares link manually
 
 Invitee taps link
@@ -190,7 +190,7 @@ Updated File Plan
 Everything else from the original plan stays the same. Key changes:
 
 App screens restructured:
-apps/skye-hosts-app/app/
+apps/highland-hosts-app/app/
 co-host/
 invite-landing.tsx → Deep link target: shows invite details + accept/sign-up
 invite-create.tsx → Owner form to create invite

@@ -1,4 +1,4 @@
-# Skye
+# Highland Hosts
 
 ## Setup
 
@@ -7,9 +7,9 @@
 - pnpm --filter=aws-infrastructure bootstrap:qa & pnpm --filter=aws-infrastructure bootstrap:production
 - (Browser: heroku.com) Resources -> Addon -> Heroku Postgres -> Essential 0
   - It will automatically attach & sort networking to dyno once deployed)
-- (Local CLI): heroku domains:add api.skyehosts.co.uk --app skye-hosts-{env} #add custom domain to heroku dyno
-- (Local CLI): heroku certs:auto:enable --app skye-hosts-{env} #add ssl certs to custom domain (even if hosted elsewhere)
-- (Local CLI): heroku domains --app skye-hosts-{env} -> #Provides DNS target for Route 53
+- (Local CLI): heroku domains:add api.highlandhosts.uk --app highland-hosts-{env} #add custom domain to heroku dyno
+- (Local CLI): heroku certs:auto:enable --app highland-hosts-{env} #add ssl certs to custom domain (even if hosted elsewhere)
+- (Local CLI): heroku domains --app highland-hosts-{env} -> #Provides DNS target for Route 53
 - (Browser: vercel.com)
   - Create projects, import to git, cancel deployed (handled by Github)
   - Create two domains (one www and one not)
@@ -25,7 +25,7 @@
 - Then clone with named account like below:
 
 ```bash
-git clone git@github-skye-hosts:skyehosts/monorepo.git
+git clone git@github-highland-hosts:highlandhosts/monorepo.git
 ```
 
 ### Anthropic / Claude setup
@@ -35,11 +35,11 @@ git clone git@github-skye-hosts:skyehosts/monorepo.git
 
 ### Install heroku CIL for convience
 
-heroku info --app skye-hosts-{env} #Url
-heroku logs --tail --app skye-hosts-{env} #Live logs
-heroku logs --num 200 --app skye-hosts-{env} #Most recent lines
-heroku config --app skye-hosts-{env} #Env vars
-heroku run sh --app skye-hosts-{env} #Bash inside docker container
+heroku info --app highland-hosts-{env} #Url
+heroku logs --tail --app highland-hosts-{env} #Live logs
+heroku logs --num 200 --app highland-hosts-{env} #Most recent lines
+heroku config --app highland-hosts-{env} #Env vars
+heroku run sh --app highland-hosts-{env} #Bash inside docker container
 
 ### Prerequisite #6: PGAdmin setup
 
@@ -66,8 +66,8 @@ Then right click on servers & 'Create' -> 'Server'
 
 `nvm use 24` #Compatible with: Node 24.13.1
 `pnpm install` @ root only
-Copy apps/skye-hosts-api/.local.env.example -> .local.env
-Copy apps/skye-hosts-api/.e2e.env.example -> .e2e.env
+Copy apps/highland-hosts-api/.local.env.example -> .local.env
+Copy apps/highland-hosts-api/.e2e.env.example -> .e2e.env
 `npx env-cmd -f .env.e2e pnpm typeorm migration:run` (Seeds e2e db)
 
 ### Twilio Email Verification (SendGrid)
@@ -79,7 +79,7 @@ Twilio Verify sends OTP emails via SendGrid. After setting up the Twilio Verify 
    - Toggle Email on
    - Click **Set up email integration** and connect your SendGrid API key
    - Set **From Email** to exactly match your verified SendGrid sender identity
-   - Set **From Name** (e.g. `Skye Hosts`)
+   - Set **From Name** (e.g. `Highland Hosts`)
    - Ensure your SendGrid dynamic template contains the `{{otp}}` placeholder
 
 When native modules in host app change:
@@ -101,28 +101,28 @@ pnpm dev
 # Run a specific application
 pnpm db
 pnpm db-down
-pnpm --filter=skye-hosts-api dev
-pnpm --filter=skye-hosts-guest-website dev
+pnpm --filter=highland-hosts-api dev
+pnpm --filter=highland-hosts-guest-website dev
 pnpm --filter=skye-glamping-website dev
-pnpm --filter=skye-hosts-app dev # Supports native modules
+pnpm --filter=highland-hosts-app dev # Supports native modules
 
 If changed native modules, the flow is:
-1. pnpm --filter=skye-hosts-app eas-build-local
-2. pnpm --filter=skye-hosts-app install-local
-3. pnpm --filter=skye-hosts-app dev → press a — starts the JS bundler and opens the app
+1. pnpm --filter=highland-hosts-app eas-build-local
+2. pnpm --filter=highland-hosts-app install-local
+3. pnpm --filter=highland-hosts-app dev → press a — starts the JS bundler and opens the app
 
 # Check for lint errors & auto fix, fixable lint errors:
-pnpm --filter=skye-hosts-api lint
+pnpm --filter=highland-hosts-api lint
 
 # Migration - Generate
-pnpm --filter=skye-hosts-api migration:generate src/migrations/name
+pnpm --filter=highland-hosts-api migration:generate src/migrations/name
 
 NB when pushing, a husky script runs pnpm build which requires that your API is still running due to ISR requests
 ```
 
 ## Environment variables
 
-- skye-hosts-api
+- highland-hosts-api
   - Locally: Uses .env.local
   - CI: Uses setup-jest.mjs
   - Production: Set via Browser in Heroku dashboard.
@@ -130,7 +130,7 @@ NB when pushing, a husky script runs pnpm build which requires that your API is 
   - Locally: Uses: .env.local
   - CI: (TBD)
   - Production: Set via Browser in Vercel dashboard (Team & project level)
-- skye-hosts-app
+- highland-hosts-app
   - Locally: Uses .env.local
   - Production:
     - insensitive: eas.json, app.json
@@ -147,14 +147,14 @@ NB when pushing, a husky script runs pnpm build which requires that your API is 
 adb push 1.jpg /sdcard/DCIM/Camera
 adb shell am broadcast -a android.intent.action.MEDIA_SCANNER_SCAN_FILE -d file:///sdcard/DCIM/Camera/1.jpg
 
-## How to update app icons (skye-hosts-app)
+## How to update app icons (highland-hosts-app)
 
 Two scripts handle icon generation — one for the main app icon and one for the Android monochrome (themed) icon, since they require different source images.
 
 ### Main icon
 
 ```bash
-pnpm --filter skye-hosts-app generate-icons ../../temp/app_icon.png
+pnpm --filter highland-hosts-app generate-icons ../../temp/app_icon.png
 ```
 
 **Source image requirements:**
@@ -164,7 +164,7 @@ pnpm --filter skye-hosts-app generate-icons ../../temp/app_icon.png
 - Square aspect ratio (1:1)
 - Non-transparent — full icon with solid background
 
-**Outputs** (written to `apps/skye-hosts-app/assets/`):
+**Outputs** (written to `apps/highland-hosts-app/assets/`):
 
 | File                          | Used by                                |
 | ----------------------------- | -------------------------------------- |
@@ -175,7 +175,7 @@ pnpm --filter skye-hosts-app generate-icons ../../temp/app_icon.png
 ### Monochrome icon (Android 13+ themed icons)
 
 ```bash
-pnpm --filter skye-hosts-app generate-icons:monochrome ../../temp/app_icon_monochrome.png
+pnpm --filter highland-hosts-app generate-icons:monochrome ../../temp/app_icon_monochrome.png
 ```
 
 When users enable "Themed icons" on Android 13+, the OS tints this image to match their wallpaper colour palette. It must be a silhouette so the tinting works correctly.
@@ -187,7 +187,7 @@ When users enable "Themed icons" on Android 13+, the OS tints this image to matc
 - Square aspect ratio (1:1)
 - **Transparent background** — logo/silhouette only (white or black shape on transparent)
 
-**Output** (written to `apps/skye-hosts-app/assets/`):
+**Output** (written to `apps/highland-hosts-app/assets/`):
 
 | File                          | Used by                                               |
 | ----------------------------- | ----------------------------------------------------- |
@@ -202,20 +202,20 @@ Rebuild via EAS. On Android, uninstall the previous build before installing to c
 - Only needed very first time
   - npx expo install expo-dev-client
 - Then:
-  - pnpm --filter=skye-hosts-app eas-build-local
-  - pnpm --filter=skye-hosts-app deploy-local
-  - pnpm --filter=skye-hosts-app dev
+  - pnpm --filter=highland-hosts-app eas-build-local
+  - pnpm --filter=highland-hosts-app deploy-local
+  - pnpm --filter=highland-hosts-app dev
 
 ## How to get logs from real apk on real device via USB when it crashes on startup
 
 - adb logcat -c && adb logcat > crash.log #clears everything
 - open app
 - hit ctrl + c
-- grep -i "fatal\|AndroidRuntime\|CRASH\|skyehosts" crash.log
+- grep -i "fatal\|AndroidRuntime\|CRASH\|highlandhosts" crash.log
 
 ## How to stream logs from real apk on real device via USB
 
-- adb logcat --pid=$(adb shell pidof -s uk.co.skyehosts)
+- adb logcat --pid=$(adb shell pidof -s uk.highlandhosts)
 
 ## How to deploy host app to EAS / Expo
 

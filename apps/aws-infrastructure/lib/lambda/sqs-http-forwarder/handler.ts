@@ -1,5 +1,5 @@
 import type { SQSEvent, SQSHandler } from "aws-lambda";
-import type { ISqsBookingMessageDto } from "@repo/skye-hosts-api-client";
+import type { ISqsBookingMessageDto } from "@repo/highland-hosts-api-client";
 
 // @sentry/aws-serverless is provided via the Lambda layer and marked as
 // external in the esbuild config, so it resolves from /opt/nodejs at runtime.

@@ -7,7 +7,7 @@ on:
       - main
 
 env:
-  HEROKU_APP_NAME: skye-hosts-production
+  HEROKU_APP_NAME: highland-hosts-production
 
 jobs:
   # Commenting out because gating is done via husky, if you want to re-introduce, requires Environments.CI added
@@ -65,13 +65,13 @@ jobs:
   #       run: pnpm lint
   #
   #     - name: Build (API + shared packages only, frontend built by Vercel)  #Possibly not idea but required for @repo/common to be available during test
-  #       run: pnpm turbo run build --filter=skye-hosts-api... --filter=@repo/common...
+  #       run: pnpm turbo run build --filter=highland-hosts-api... --filter=@repo/common...
   #
   #     - name: Tests (Unit)
   #       run: pnpm test
   #
   #     - name: Install Playwright browsers
-  #       run: pnpm --filter=skye-hosts-app exec playwright install --with-deps chromium
+  #       run: pnpm --filter=highland-hosts-app exec playwright install --with-deps chromium
   #
   #     - name: Tests (e2e)
   #       run: pnpm test:e2e
@@ -93,7 +93,7 @@ jobs:
       SQS_FORWARDER_HTTP_SECRET: ${{ secrets.SQS_FORWARDER_HTTP_SECRET }}
       SQS_FORWARDER_SENTRY_DSN_LAYER_ARN:  ${{ vars.SQS_FORWARDER_SENTRY_DSN_LAYER_ARN }}
 
-  deploy-skye-hosts-api:
+  deploy-highland-hosts-api:
     name: Deploy API to Heroku
     needs: deploy-infrastructure-prod
     runs-on: ubuntu-latest
@@ -105,7 +105,7 @@ jobs:
         run: echo "${{ secrets.HEROKU_API_KEY }}" | docker login --username=_ --password-stdin registry.heroku.com
 
       - name: Build Docker image
-        run: docker build --provenance=false -t registry.heroku.com/${{ env.HEROKU_APP_NAME }}/web -f apps/skye-hosts-api/Dockerfile .
+        run: docker build --provenance=false -t registry.heroku.com/${{ env.HEROKU_APP_NAME }}/web -f apps/highland-hosts-api/Dockerfile .
 
       - name: Push Docker image to Heroku
         run: docker push registry.heroku.com/${{ env.HEROKU_APP_NAME }}/web
@@ -137,13 +137,13 @@ jobs:
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
           STRIPE_SECRET: ${{ secrets.STRIPE_SECRET }}
 
-  deploy-skye-hosts-guest-website:
-    name: Deploy Skye Hosts Guest Website
-    needs: deploy-skye-hosts-api
+  deploy-highland-hosts-guest-website:
+    name: Deploy Highland Hosts Guest Website
+    needs: deploy-highland-hosts-api
     uses: ./.github/workflows/_deploy-vercel-app.yml
     with:
-      app-name: skye-hosts-guest-website
-      watch-paths: ./apps/skye-hosts-guest-website ./packages/ui ./packages/config ./packages/auth ./packages/theme
+      app-name: highland-hosts-guest-website
+      watch-paths: ./apps/highland-hosts-guest-website ./packages/ui ./packages/config ./packages/auth ./packages/theme
       vercel-org-id: ${{ vars.VERCEL_ORG_ID }}
       vercel-project-id: ${{ vars.VERCEL_PROJECT_ID_SKYE_HOSTS_GUEST }}
       env: production
@@ -152,7 +152,7 @@ jobs:
 
   deploy-skye-glamping-website:
     name: Deploy Skye Glamping Website
-    needs: deploy-skye-hosts-api
+    needs: deploy-highland-hosts-api
     uses: ./.github/workflows/_deploy-vercel-app.yml
     with:
       app-name: skye-glamping
@@ -163,13 +163,13 @@ jobs:
     secrets:
       vercel-token: ${{ secrets.VERCEL_TOKEN }}
 
-  # deploy-skye-hosts-admin-website:
-  #   name: Deploy Skye Hosts Admin Website
-  #   needs: deploy-skye-hosts-api
+  # deploy-highland-hosts-admin-website:
+  #   name: Deploy Highland Hosts Admin Website
+  #   needs: deploy-highland-hosts-api
   #   uses: ./.github/workflows/_deploy-vercel-app.yml
   #   with:
-  #     app-name: skye-hosts-admin-website
-  #     watch-paths: ./apps/skye-hosts-admin-website ./packages/ui ./packages/config ./packages/auth
+  #     app-name: highland-hosts-admin-website
+  #     watch-paths: ./apps/highland-hosts-admin-website ./packages/ui ./packages/config ./packages/auth
   #     vercel-org-id: ${{ vars.VERCEL_ORG_ID }}
   #     vercel-project-id: ${{ vars.VERCEL_PROJECT_ID_SKYE_HOSTS_ADMIN }}
   #     env: production

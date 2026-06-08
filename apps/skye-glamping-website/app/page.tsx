@@ -3,7 +3,7 @@ import {
   fetchApi,
   type IGetHomepageListingsResponseDto,
   slugify,
-} from '@repo/skye-hosts-api-client';
+} from '@repo/highland-hosts-api-client';
 import { HomepageListingsGrid } from '@repo/web-components/listings/homepage-listings-grid';
 import Link from 'next/link';
 

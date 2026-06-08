@@ -18,7 +18,7 @@ import {
   fetchApi,
   type IBookingPaymentRequestDto,
   type IBookingPaymentResponseDto,
-} from '@repo/skye-hosts-api-client';
+} from '@repo/highland-hosts-api-client';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { getDisplayError } from '../forms/get-display-error';

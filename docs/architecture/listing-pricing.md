@@ -6,7 +6,7 @@ Pricing for Air-BnB-style listings. Hosts set **net income per night** (what lan
 
 Most monetary values are integer pence. **Cleaning fee is the exception** — stored as whole pounds (`cleaningFeePound`). Hosts don't need pence granularity on a cleaning fee, so we avoid the off-by-100 class of mistake by keeping the unit visible in the field name. The pence-vs-pound unit is always encoded in the field suffix across both the DB column and all DTOs.
 
-| Entity (`apps/skye-hosts-api/src/modules/listing/entities/`) | Shape                                                                                                                                                                                         |
+| Entity (`apps/highland-hosts-api/src/modules/listing/entities/`) | Shape                                                                                                                                                                                         |
 | ------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `listing_season_pricing`                                     | one row per (listing, season). Seasons are fixed: `low` (Nov–Feb), `shoulder` (Mar–Apr + Sep–Oct), `peak` (May–Aug). Weekday vs weekend base rates; weekend = Fri + Sat nights platform-wide. |
 | `listing_pricing`                                            | singleton per listing. `cleaningFeePound` (whole pounds; `0` means "not set"), extra-guest threshold + fee pence, three discount flags + percents.                                            |
@@ -16,7 +16,7 @@ Booking carries a frozen `priceBreakdown: IPriceBreakdownDto` JSONB column — h
 
 ## Shared math — `packages/common/src/pricing/`
 
-Pure, no IO, consumed by API, host app, and guest website. DTO-shaped types (`IPriceBreakdownDto`, `IQuoteRequestDto`, etc.) live in `types.ts` here alongside the math — **not** in `@repo/skye-hosts-api-client`. They're domain shapes the math anchors to, and keeping them next to the math avoids a dependency cycle (`api-client → common` for `Environments` already exists). Import pricing types from `@repo/common` directly.
+Pure, no IO, consumed by API, host app, and guest website. DTO-shaped types (`IPriceBreakdownDto`, `IQuoteRequestDto`, etc.) live in `types.ts` here alongside the math — **not** in `@repo/highland-hosts-api-client`. They're domain shapes the math anchors to, and keeping them next to the math avoids a dependency cycle (`api-client → common` for `Environments` already exists). Import pricing types from `@repo/common` directly.
 
 - `constants.ts` — single source of truth for all fee rates and discount thresholds. `HOST_FEE_RATE` (0.03), `GUEST_FEE_SHORT_STAY_RATE` (0.03, stays ≤ 2 nights), `GUEST_FEE_LONG_STAY_RATE` (0, stays ≥ 3 nights), `STRIPE_PASS_THROUGH_RATE` (0.03), `LAST_MINUTE_DISCOUNT_MAX_DAYS` (14), `WEEKLY_DISCOUNT_MIN_NIGHTS` (7), `MONTHLY_DISCOUNT_MIN_NIGHTS` (28), `WEEKEND_NIGHT_WEEKDAYS = [5, 6]`.
 - `seasons.ts` — `getSeasonForDate`, `isWeekendNight`.
@@ -26,7 +26,7 @@ Pure, no IO, consumed by API, host app, and guest website. DTO-shaped types (`IP
 
 ## API surface — listing module
 
-Two controllers under `apps/skye-hosts-api/src/modules/listing/controllers/`:
+Two controllers under `apps/highland-hosts-api/src/modules/listing/controllers/`:
 
 - `listing-pricing.controller.ts` (host-only, ownership-asserted via `ListingAccessService`):
   - `GET /listing/:id/pricing` — full config (3 seasons + globals + `isComplete`).
@@ -52,14 +52,14 @@ Two controllers under `apps/skye-hosts-api/src/modules/listing/controllers/`:
 
 ## Host app
 
-- `apps/skye-hosts-app/app/edit-listing/pricing.tsx` — main screen. Three season cards + cleaning-fee card (tap → `PriceInputModal` → `PUT /pricing/cleaning-fee` → refetch) + extra-guest-fee card (still V1 read-only) + discounts section with live-saved toggles. Fetches on focus; discount edits debounce 250ms before PUT. Cleaning-fee card shows "Not set" when `cleaningFeePound === 0`. Warning InfoBox surfaces when `!pricing.isComplete`.
-- `apps/skye-hosts-app/app/components/price-input-modal.tsx` — reusable integer-pound editor. Wraps a £-prefixed numeric `TextInput` in a react-hook-form `Controller` with min/max validation. Supports optional `helperText` rendered between input and `ActionBar`. First consumer is the cleaning-fee card; designed to cover the extra-guest fee card next.
-- `apps/skye-hosts-app/app/edit-listing/pricing/season-wizard-modal.tsx` — full-screen two-stage modal. Stage 1 ("Set a weekday price"): compact centered `PriceInput` with expandable `GuestPriceBreakdown`. Stage 2 ("Set a weekend price"): large non-editable price display at top, `GuestPriceBreakdown` below, then a "Weekend premium" `PercentSlider` (0–100%, step 5, default 20%) as the only way to adjust — the displayed price derives from `weekdayPence * (1 + premium/100)`. Absolute-entry mode for the weekend price was removed; the wire format is still absolute pence, so on reopen the premium is reverse-computed and snapped to the nearest 5%.
-- `apps/skye-hosts-app/app/components/percent-slider.tsx` — touch-responder-based horizontal slider (no native dep, no rebuild). Props: `value`, `onValueChange`, `min`, `max`, `step`, optional `ticks`. Used for the weekend premium.
-- `apps/skye-hosts-app/app/edit-listing/pricing/guest-price-breakdown.tsx` — accordion header shows "Guest pays £X" (left) + "Show/Hide price breakdown" (right, next to chevron).
-- `apps/skye-hosts-app/app/edit-listing/bookings-section.tsx` — pricing card shows "Peak £X · Shoulder £Y · Low £Z" once configured, and a warning chip when incomplete and not yet active.
-- Calendar (`apps/skye-hosts-app/app/calendar/[id].tsx`): fetches calendar-prices + overrides alongside bookings/blocks. `DayCell` renders the host-net below the day number in `typography.xs`; override dates use the primary-coloured semibold variant.
-- `apps/skye-hosts-app/app/calendar/components/price-override-modal.tsx` — opened from `DateBlockSheet`'s "Set price override" action when the selected range contains at least one unblocked, unbooked date. Expands the range (iCal-style exclusive end) and PUTs `{ dates, pricePence }`; Remove path DELETEs the subset of dates that already had overrides.
+- `apps/highland-hosts-app/app/edit-listing/pricing.tsx` — main screen. Three season cards + cleaning-fee card (tap → `PriceInputModal` → `PUT /pricing/cleaning-fee` → refetch) + extra-guest-fee card (still V1 read-only) + discounts section with live-saved toggles. Fetches on focus; discount edits debounce 250ms before PUT. Cleaning-fee card shows "Not set" when `cleaningFeePound === 0`. Warning InfoBox surfaces when `!pricing.isComplete`.
+- `apps/highland-hosts-app/app/components/price-input-modal.tsx` — reusable integer-pound editor. Wraps a £-prefixed numeric `TextInput` in a react-hook-form `Controller` with min/max validation. Supports optional `helperText` rendered between input and `ActionBar`. First consumer is the cleaning-fee card; designed to cover the extra-guest fee card next.
+- `apps/highland-hosts-app/app/edit-listing/pricing/season-wizard-modal.tsx` — full-screen two-stage modal. Stage 1 ("Set a weekday price"): compact centered `PriceInput` with expandable `GuestPriceBreakdown`. Stage 2 ("Set a weekend price"): large non-editable price display at top, `GuestPriceBreakdown` below, then a "Weekend premium" `PercentSlider` (0–100%, step 5, default 20%) as the only way to adjust — the displayed price derives from `weekdayPence * (1 + premium/100)`. Absolute-entry mode for the weekend price was removed; the wire format is still absolute pence, so on reopen the premium is reverse-computed and snapped to the nearest 5%.
+- `apps/highland-hosts-app/app/components/percent-slider.tsx` — touch-responder-based horizontal slider (no native dep, no rebuild). Props: `value`, `onValueChange`, `min`, `max`, `step`, optional `ticks`. Used for the weekend premium.
+- `apps/highland-hosts-app/app/edit-listing/pricing/guest-price-breakdown.tsx` — accordion header shows "Guest pays £X" (left) + "Show/Hide price breakdown" (right, next to chevron).
+- `apps/highland-hosts-app/app/edit-listing/bookings-section.tsx` — pricing card shows "Peak £X · Shoulder £Y · Low £Z" once configured, and a warning chip when incomplete and not yet active.
+- Calendar (`apps/highland-hosts-app/app/calendar/[id].tsx`): fetches calendar-prices + overrides alongside bookings/blocks. `DayCell` renders the host-net below the day number in `typography.xs`; override dates use the primary-coloured semibold variant.
+- `apps/highland-hosts-app/app/calendar/components/price-override-modal.tsx` — opened from `DateBlockSheet`'s "Set price override" action when the selected range contains at least one unblocked, unbooked date. Expands the range (iCal-style exclusive end) and PUTs `{ dates, pricePence }`; Remove path DELETEs the subset of dates that already had overrides.
 
 ## Guest website
 
@@ -73,6 +73,6 @@ Two controllers under `apps/skye-hosts-api/src/modules/listing/controllers/`:
 
 ## Open items
 
-- `PaymentService` (`apps/skye-hosts-api/src/modules/payment/providers/payment.service.ts`) still has a stub `amount: 100, currency: 'usd'`. It needs to source from `booking.priceBreakdown.totalGuestPence` when payments go live.
+- `PaymentService` (`apps/highland-hosts-api/src/modules/payment/providers/payment.service.ts`) still has a stub `amount: 100, currency: 'usd'`. It needs to source from `booking.priceBreakdown.totalGuestPence` when payments go live.
 - Extra-guest-fee host UI is still V1 read-only. `PriceInputModal` exists and can be reused, but extra-guest needs both a threshold and a per-night amount, so it needs either a second two-field modal or an extension of the current one.
 - Stripe pass-through is a flat 3% — slightly over-charges vs UK Stripe's 1.5–2.9% + 20p. Safe direction; flag for finance review before launch.

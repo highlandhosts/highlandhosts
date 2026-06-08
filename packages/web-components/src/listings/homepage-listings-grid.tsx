@@ -1,5 +1,5 @@
 import Box from '@mui/material/Box';
-import type { IHomepageListingDto } from '@repo/skye-hosts-api-client';
+import type { IHomepageListingDto } from '@repo/highland-hosts-api-client';
 import type { ReactNode } from 'react';
 
 import { HomepageListingCard } from './homepage-listing-card';

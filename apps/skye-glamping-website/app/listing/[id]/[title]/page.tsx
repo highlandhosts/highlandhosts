@@ -1,5 +1,8 @@
 import Container from '@mui/material/Container';
-import { fetchApi, IGetListingResponseDto } from '@repo/skye-hosts-api-client';
+import {
+  fetchApi,
+  IGetListingResponseDto,
+} from '@repo/highland-hosts-api-client';
 import { ListingDescriptionSection } from '@repo/web-components/listings/listing-description-section';
 import { ListingHeroSection } from '@repo/web-components/listings/listing-hero-section';
 import type { Metadata } from 'next';

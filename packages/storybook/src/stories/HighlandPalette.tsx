@@ -24,7 +24,7 @@ const ACCENT_SWATCHES = [
 
 /**
  * Visual reference for the Highland-inspired colour palette
- * used across Skye Hosts applications.
+ * used across Highland Hosts applications.
  */
 export function HighlandPalette() {
   return (

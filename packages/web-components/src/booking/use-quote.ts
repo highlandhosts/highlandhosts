@@ -1,7 +1,7 @@
 'use client';
 
 import type { IQuoteRequestDto, IQuoteResponseDto } from '@repo/common';
-import { fetchApi } from '@repo/skye-hosts-api-client';
+import { fetchApi } from '@repo/highland-hosts-api-client';
 import { useEffect, useState } from 'react';
 import {
   formatDateParam,

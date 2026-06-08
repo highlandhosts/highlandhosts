@@ -5,7 +5,7 @@ import Dialog from '@mui/material/Dialog';
 import DialogContent from '@mui/material/DialogContent';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
-import type { IListingAmenityCategoryDto } from '@repo/skye-hosts-api-client';
+import type { IListingAmenityCategoryDto } from '@repo/highland-hosts-api-client';
 import { AmenityRow } from './amenity-icon';
 import { ListingModalHeader } from './listing-modal-styles';
 

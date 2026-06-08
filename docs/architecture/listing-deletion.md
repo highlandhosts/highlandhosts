@@ -34,7 +34,7 @@ All deletions run inside a single database transaction:
 
 ## Key files
 
-- `apps/skye-hosts-api/src/modules/listing/providers/listing.service.ts` — `delete()` method
-- `apps/skye-hosts-api/src/modules/listing/controllers/listing.controller.ts` — `DELETE /listing/:id`
-- `apps/skye-hosts-app/app/edit-listing/listing-settings.tsx` — settings screen with delete modal
-- `apps/skye-hosts-app/app/edit-listing/[id].tsx` — cog icon in app bar
+- `apps/highland-hosts-api/src/modules/listing/providers/listing.service.ts` — `delete()` method
+- `apps/highland-hosts-api/src/modules/listing/controllers/listing.controller.ts` — `DELETE /listing/:id`
+- `apps/highland-hosts-app/app/edit-listing/listing-settings.tsx` — settings screen with delete modal
+- `apps/highland-hosts-app/app/edit-listing/[id].tsx` — cog icon in app bar
