@@ -2,6 +2,8 @@
 Manual TODO
 ===========
 - Migrate highlandhosts -> highlandhosts
+  - Sendgrid -> sender authentication no-reply@highlandhosts.uk
+    - verify address in twilio
   - Sentry: in skye hosts browser, set hh as primary email and delete other owner
     - rename projects
   - Migrate Vercel through change email method
@@ -10,7 +12,6 @@ Manual TODO
   - Heroku env vars
     - Everyone listed that isn't sent in auto from deploy-prod.yml
   - Github variables pointing to highlandhosts accounts, need HH equivelant created
-    - EXPO_TOKEN
     - TWILIO_AUTH_TOKEN
     - SQS_FORWARDER_HTTP_SECRET
     - TWILIO_ACCOUNT_SID
