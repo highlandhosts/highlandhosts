@@ -50,6 +50,7 @@ jobs:
           token: ${{ secrets.EXPO_TOKEN }}
 
       - name: Verify Expo login
+        working-directory: apps/highland-hosts-app
         run: |
           eas whoami
           eas project:info

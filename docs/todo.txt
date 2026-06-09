@@ -27,6 +27,14 @@ Manual TODO
       - JWT_SECRET
       - STRIPE_SECRET
 
+pork belly
+beef brisket
+pork ribs
+sardines
+butter
+people who have had insulin resistance issue, should be weary of net carb and focus on total carbs
+
+
 ======================================
 Testing pending
 ======================================
