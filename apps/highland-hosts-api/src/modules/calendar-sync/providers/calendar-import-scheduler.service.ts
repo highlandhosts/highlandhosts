@@ -24,7 +24,7 @@ export class CalendarImportSchedulerService implements OnModuleInit {
 
   onModuleInit() {
     const expression =
-      process.env.SKYE_ENVIRONMENT === 'local'
+      process.env.HIGHLAND_HOSTS_ENVIRONMENT === 'local'
         ? '0 */1 * * * *' // every 60s
         : '0 0 */3 * * *'; // every 3h
 

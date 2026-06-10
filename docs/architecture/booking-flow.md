@@ -82,7 +82,7 @@ The standalone `/sign-up` route previously had a "subscribe to our newsletter" c
 
 ## Dev-only test booking
 
-`BookingPaymentSection` renders a dev-only `TestBookingPanel` under the "Add a payment method" card, gated on `process.env.NEXT_PUBLIC_SKYE_ENVIRONMENT !== Environments.PRODUCTION` (so it shows in **local + qa** but is hidden in prod). The panel's **Create test booking** button POSTs to `/payment/process-booking-payment` with the user's real `listingId` / `guestId` / `dateRange` / `quote.total` plus `isTestBooking: true`, then redirects to `/booking-confirmed?listingId=…&checkin=…&checkout=…`.
+`BookingPaymentSection` renders a dev-only `TestBookingPanel` under the "Add a payment method" card, gated on `process.env.NEXT_PUBLIC_HIGHLAND_HOSTS_ENVIRONMENT !== Environments.PRODUCTION` (so it shows in **local + qa** but is hidden in prod). The panel's **Create test booking** button POSTs to `/payment/process-booking-payment` with the user's real `listingId` / `guestId` / `dateRange` / `quote.total` plus `isTestBooking: true`, then redirects to `/booking-confirmed?listingId=…&checkin=…&checkout=…`.
 
 This preserves the capability the now-deleted `BookNowButton` provided: a one-click way to exercise the full post-payment pipeline (SQS → booking row → scheduled messages) without real card input. Server-side, `ScheduledMessageCreationService` detects `isTestBooking` and schedules messages at 0/1/2/3-minute offsets from now, so the check-in/out dates you submit only affect the persisted Booking row — they don't influence message timing.
 

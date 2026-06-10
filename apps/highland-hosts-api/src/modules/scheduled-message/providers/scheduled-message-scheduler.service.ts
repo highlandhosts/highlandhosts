@@ -23,7 +23,7 @@ export class ScheduledMessageSchedulerService implements OnModuleInit {
 
   onModuleInit() {
     const expression =
-      process.env.SKYE_ENVIRONMENT === 'local'
+      process.env.HIGHLAND_HOSTS_ENVIRONMENT === 'local'
         ? '*/30 * * * * *' // every 30s
         : '0 * * * *'; // every 1h
 

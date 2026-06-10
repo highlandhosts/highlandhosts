@@ -4,7 +4,7 @@ import { auth } from './app/auth';
 const protectedPaths = ['/bookings', '/accounts'];
 
 export default auth((req) => {
-  if (process.env.NEXT_PUBLIC_SKYE_ENVIRONMENT === 'production') {
+  if (process.env.NEXT_PUBLIC_HIGHLAND_HOSTS_ENVIRONMENT === 'production') {
     const user = process.env.BASIC_AUTH_USER;
     const pass = process.env.BASIC_AUTH_PASS;
 

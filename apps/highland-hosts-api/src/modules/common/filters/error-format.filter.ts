@@ -22,7 +22,7 @@ export class ErrorFormatFilter implements ExceptionFilter {
       response
         .status(500)
         .json(
-          process.env.SKYE_ENVIRONMENT === Environments.PRODUCTION
+          process.env.HIGHLAND_HOSTS_ENVIRONMENT === Environments.PRODUCTION
             ? 'An error has occured, check logs for details'
             : exception.stack,
         );

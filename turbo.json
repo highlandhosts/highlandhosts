@@ -2,7 +2,7 @@
   "$schema": "https://turbo.build/schema.json",
   "ui": "tui",
   "concurrency": "11",
-  "globalEnv": ["SKYE_ENVIRONMENT", "NODE_ENV"],
+  "globalEnv": ["HIGHLAND_HOSTS_ENVIRONMENT", "NODE_ENV"],
   "tasks": {
     "clean": {
       "cache": false

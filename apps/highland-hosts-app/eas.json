@@ -7,7 +7,7 @@
       "developmentClient": true,
       "distribution": "internal",
       "env": {
-        "SKYE_ENVIRONMENT": "local",
+        "HIGHLAND_HOSTS_ENVIRONMENT": "local",
         "API_URL": "https://api.highlandhosts.uk",
         "SHOW_DEV_MENU": "true"
       }
@@ -16,7 +16,7 @@
       "distribution": "internal",
       "channel": "preview",
       "env": {
-        "SKYE_ENVIRONMENT": "production",
+        "HIGHLAND_HOSTS_ENVIRONMENT": "production",
         "API_URL": "https://api.highlandhosts.uk",
         "LOG_LEVEL": "debug",
         "SHOW_DEV_MENU": "true"
@@ -27,7 +27,7 @@
       "channel": "production",
       "autoIncrement": true,
       "env": {
-        "SKYE_ENVIRONMENT": "production",
+        "HIGHLAND_HOSTS_ENVIRONMENT": "production",
         "API_URL": "https://api.highlandhosts.uk"
       }
     },
@@ -35,7 +35,7 @@
       "channel": "production",
       "autoIncrement": true,
       "env": {
-        "SKYE_ENVIRONMENT": "production",
+        "HIGHLAND_HOSTS_ENVIRONMENT": "production",
         "API_URL": "https://api.highlandhosts.uk"
       }
     }

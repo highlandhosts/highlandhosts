@@ -15,42 +15,42 @@ Create three projects in Sentry:
 
 ### Shared: environment name
 
-All three apps read a `SKYE_ENVIRONMENT` variable (e.g. `production`, `staging`, `development`) and
+All three apps read a `HIGHLAND_HOSTS_ENVIRONMENT` variable (e.g. `production`, `staging`, `development`) and
 send it to Sentry so errors can be filtered by environment. Each platform requires a prefix for the
 variable to be accessible inside the app bundle:
 
-| App                          | Variable name                  |
-| ---------------------------- | ------------------------------ |
-| highland-hosts-guest-website | `NEXT_PUBLIC_SKYE_ENVIRONMENT` |
-| skye-glamping-website        | `NEXT_PUBLIC_SKYE_ENVIRONMENT` |
-| highland-hosts-app           | `EXPO_PUBLIC_SKYE_ENVIRONMENT` |
+| App                          | Variable name                            |
+| ---------------------------- | ---------------------------------------- |
+| highland-hosts-guest-website | `NEXT_PUBLIC_HIGHLAND_HOSTS_ENVIRONMENT` |
+| skye-glamping-website        | `NEXT_PUBLIC_HIGHLAND_HOSTS_ENVIRONMENT` |
+| highland-hosts-app           | `EXPO_PUBLIC_HIGHLAND_HOSTS_ENVIRONMENT` |
 
 ### apps/highland-hosts-guest-website (`.env.local` for dev, hosting provider for prod)
 
 ```
 NEXT_PUBLIC_GUEST_WEBSITE_SENTRY_DSN=https://xxx@oXXX.ingest.sentry.io/XXX
-NEXT_PUBLIC_SKYE_ENVIRONMENT=production
+NEXT_PUBLIC_HIGHLAND_HOSTS_ENVIRONMENT=production
 ```
 
 ### apps/skye-glamping-website (`.env.local` for dev, hosting provider for prod)
 
 ```
 NEXT_PUBLIC_GLAMPING_WEBSITE_SENTRY_DSN=https://xxx@oXXX.ingest.sentry.io/XXX
-NEXT_PUBLIC_SKYE_ENVIRONMENT=production
+NEXT_PUBLIC_HIGHLAND_HOSTS_ENVIRONMENT=production
 ```
 
 ### apps/highland-hosts-app (`.env` for dev, EAS Secrets for prod)
 
 ```
 EXPO_PUBLIC_SENTRY_DSN=https://xxx@oXXX.ingest.sentry.io/XXX
-EXPO_PUBLIC_SKYE_ENVIRONMENT=production
+EXPO_PUBLIC_HIGHLAND_HOSTS_ENVIRONMENT=production
 ```
 
 For production EAS builds:
 
 ```
 eas secret:create --name EXPO_PUBLIC_SENTRY_DSN --value <dsn>
-eas secret:create --name EXPO_PUBLIC_SKYE_ENVIRONMENT --value production
+eas secret:create --name EXPO_PUBLIC_HIGHLAND_HOSTS_ENVIRONMENT --value production
 ```
 
 ## Optional: Source Maps (Production)

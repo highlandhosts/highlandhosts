@@ -7,7 +7,7 @@ import * as Sentry from '@sentry/nextjs';
 Sentry.init(
   createSentryOptions(
     process.env.NEXT_PUBLIC_GUEST_WEBSITE_SENTRY_DSN,
-    process.env.NEXT_PUBLIC_SKYE_ENVIRONMENT,
+    process.env.NEXT_PUBLIC_HIGHLAND_HOSTS_ENVIRONMENT,
   ),
 );
 

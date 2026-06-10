@@ -19,8 +19,9 @@ import { AppModule } from './modules/app/app.module';
 import { ErrorFormatFilter } from './modules/common/filters';
 
 async function bootstrap() {
-  const isLocal = process.env.SKYE_ENVIRONMENT === Environments.LOCAL;
-  const isProduction = process.env.SKYE_ENVIRONMENT === Environments.PRODUCTION;
+  const isLocal = process.env.HIGHLAND_HOSTS_ENVIRONMENT === Environments.LOCAL;
+  const isProduction =
+    process.env.HIGHLAND_HOSTS_ENVIRONMENT === Environments.PRODUCTION;
   const app = await NestFactory.create<NestExpressApplication>(AppModule, {
     ...(!isProduction && {
       logger: ['log', 'error', 'warn', 'debug', 'verbose'],

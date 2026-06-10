@@ -24,7 +24,7 @@ const config: ExpoConfig = {
   },
   extra: {
     ...base.extra,
-    SKYE_ENVIRONMENT: process.env.SKYE_ENVIRONMENT,
+    HIGHLAND_HOSTS_ENVIRONMENT: process.env.HIGHLAND_HOSTS_ENVIRONMENT,
     SENTRY_DSN: process.env.SENTRY_DSN,
     API_URL: process.env.API_URL,
     LOG_LEVEL: process.env.LOG_LEVEL,

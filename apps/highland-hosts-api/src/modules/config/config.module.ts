@@ -11,7 +11,7 @@ import { ConfigService } from './providers/config.service';
   imports: [
     NestConfigModule.forRoot({
       envFilePath:
-        process.env.SKYE_ENVIRONMENT === Environments.LOCAL
+        process.env.HIGHLAND_HOSTS_ENVIRONMENT === Environments.LOCAL
           ? constants.envPath
           : undefined,
       isGlobal: true,

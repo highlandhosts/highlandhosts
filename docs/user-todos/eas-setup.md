@@ -49,11 +49,11 @@ Trigger builds via GitHub Actions:
 
 ## Environment Variables
 
-Build profiles inject `SKYE_ENVIRONMENT` automatically:
+Build profiles inject `HIGHLAND_HOSTS_ENVIRONMENT` automatically:
 
-- **development** → `SKYE_ENVIRONMENT=development`
-- **preview** → `SKYE_ENVIRONMENT=qa`
-- **production** → `SKYE_ENVIRONMENT=production`
+- **development** → `HIGHLAND_HOSTS_ENVIRONMENT=development`
+- **preview** → `HIGHLAND_HOSTS_ENVIRONMENT=qa`
+- **production** → `HIGHLAND_HOSTS_ENVIRONMENT=production`
 
 For `SENTRY_DSN` and `API_URL`, set them as EAS secrets:
 
