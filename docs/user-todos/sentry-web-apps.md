@@ -19,8 +19,8 @@ All three apps read a `HIGHLAND_HOSTS_ENVIRONMENT` variable (e.g. `production`, 
 send it to Sentry so errors can be filtered by environment. Each platform requires a prefix for the
 variable to be accessible inside the app bundle:
 
-| App                          | Variable name                  |
-| ---------------------------- | ------------------------------ |
+| App                          | Variable name                            |
+| ---------------------------- | ---------------------------------------- |
 | highland-hosts-guest-website | `NEXT_PUBLIC_HIGHLAND_HOSTS_ENVIRONMENT` |
 | skye-glamping-website        | `NEXT_PUBLIC_HIGHLAND_HOSTS_ENVIRONMENT` |
 | highland-hosts-app           | `EXPO_PUBLIC_HIGHLAND_HOSTS_ENVIRONMENT` |
