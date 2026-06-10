@@ -1,36 +1,17 @@
-===========
-Manual TODO
-===========
+===================
+MVP (Skyeglamping)
+===================
 - Migrate highlandhosts -> highlandhosts
-  - Heroku Postgres is Essential 0, needs upgraded to Essential 1, when live
-  - Cancel old subs for skyehosts
-  - Heroku env vars
-    - Everyone listed that isn't sent in auto from deploy-prod.yml
-  - Github variables pointing to highlandhosts accounts, need HH equivelant created
-    - EXPO_TOKEN
-    - TWILIO_AUTH_TOKEN
-    - SQS_FORWARDER_HTTP_SECRET
-    - TWILIO_ACCOUNT_SID
-    - TWILIO_AUTH_TOKEN
-    - VERCEL_TOKEN
-    - BOOKINGS_SQS_FORWARDER_SENTRY_DSN
-    - IMAGE_PROCESSOR_SENTRY_DSN
-    - SCHEDULED_MESSAGES_SQS_FORWARDER_SENTRY_DSN
-    - SQS_FORWARDER_SENTRY_DSN_LAYER_ARN
-    - VERCEL_ORG_ID
-    - VERCEL_PROJECT_ID_SKYE_GLAMPING
-    - VERCEL_PROJECT_ID_SKYE_HOSTS_ADMIN
-    - VERCEL_PROJECT_ID_SKYE_HOSTS_GUEST
-    - env qa
-      - BOOKINGS_SQS_FORWARDER_ENDPOINT
-      - SCHEDULED_MESSAGES_SQS_FORWARDER_ENDPOINT
-    - env prod
-      - AWS_CLOUDFRONT_IMAGES_DOMAIN
-      - AWS_S3_IMAGES_BUCKET
-      - BOOKINGS_SQS_FORWARDER_ENDPOINT
-      - SCHEDULED_MESSAGES_SQS_FORWARDER_ENDPOINT
-      - JWT_SECRET
-      - STRIPE_SECRET
+  - Vercel ENV needs updated with new NEXT_PUBLIC_GOOGLE_MAPS_STATIC_KEY
+  - Vercel ENV needs updated with new NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN
+  - Sendgrid -> sender authentication no-reply@highlandhosts.uk
+    - verify address in twilio
+  - Migrate Vercel through change email method
+  - Cancel zoho sub for skyehosts (after vercel)
+  - Gmail - Google Play sign up - identity check
+  - Gmail - Your google order is on hold
+- Rename HIGHLAND_HOSTS_ENVIRONMENT to HIGHLAND_HOSTS_ENVIRONMENT
+
 ======================================
 Testing pending
 ======================================
@@ -47,9 +28,6 @@ Pending Prompts
 - Bug:
   - Emulator shows Sep 14th-20th are blocked on airbnb but they arne't. Why?
   - On device only, when long pressing on Sept 15th, it should select just that date, but it selects 15-22 sep?
-- Refine pricing featire
-  - On 3+ night stays, the guest fee is 0%. ?
-    - NB: Pricing on AirBNB isn't just 18% and 15%, its more nuanced, need to understand further to achieve some semblance of parity.
 - Extra guest fee
   - In hosts app on 'Pricing' page, there was a previously partially implemented feature called 'Extra Guest fdee'
   - Let's fininsh the implementation
@@ -79,12 +57,10 @@ MVP: Host app
 High prescence
 --------------
 - How to view images on desktop, should open in lightbox? MVP
-- Highland Hosts setup
-  - Requires: F&H or Sando IT
 - Cancellation policy - full policy modal
 - "self check-in with lockbox" field
-- Beds/bedroom granularity like airbnb (Photo tour) - What is solution here?
-- Co - host test invite and listing access [Blocked awaiting dnb thing]
+- Infering num beds and bedrooms, air bnb infers from photo categories, how cam i going to do it ?
+- Co - host test invite and listing access [Requires deep linking, requires publicshing to google play possibly?]
   - Resend: Deep link solve.
     - Publish app to google play (Beta)
     - docs/user-todos/universal-links-setup.md
@@ -103,8 +79,8 @@ High prescence
 - Scheduled messages
   - Should they show in conversation thread
   - Should host received a notification for outbound scheduled messages (like Air BnB)
-- Payments (Stripe or Plaid)
-- SKYE_ENVIRONMENT doesn't make much sense in context of app. as it has local, preview, production etc expo dists...
+- Payments (Stripe)
+- HIGHLAND_HOSTS_ENVIRONMENT doesn't make much sense in context of app. as it has local, preview, production etc expo dists...
   - It's used by sentry, its passed it in as sentry env... also look at eas.json.
 - Queue policy needs review (retry speed etc)
 - Security: Confirm peoples identity or address, otherwise anyone could hots a prop and collect money?
@@ -135,6 +111,9 @@ Low prescence
 ========
 Post-MVP
 ========
+- Refine pricing featire
+  - On 3+ night stays, the guest fee is 0%. ?
+    - NB: Pricing on AirBNB isn't just 18% and 15%, its more nuanced, need to understand further to achieve some semblance of parity.
 - Menu -> Earnings
 - Menu -> Payments
 - iCal sync between skye-glamping and highland-hosts for Croft8
@@ -178,3 +157,8 @@ You can't market as "AirBNB but cheaper"
 TLDR:
   - Don't use exact wording
   - Diverge layout/style slightly where possible
+
+=================
+Go-Live reminders
+=================
+- Heroku Postgres is Essential 0, needs upgraded to Essential 1, when live

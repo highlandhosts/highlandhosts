@@ -16,7 +16,7 @@ class AppEnvironmentVariablesValidator {
   GITHUB_RUN_NUMBER: number;
 
   @IsEnum(Environments)
-  SKYE_ENVIRONMENT: Environments;
+  HIGHLAND_HOSTS_ENVIRONMENT: Environments;
 
   @IsOptional()
   @IsString()
@@ -118,7 +118,7 @@ export class ConfigService extends NestConfigService {
   getAll(): IEnvironmentVariables {
     return {
       githubRunNumber: this.get<number>('GITHUB_RUN_NUMBER'),
-      environment: this.get<Environments>('SKYE_ENVIRONMENT'),
+      environment: this.get<Environments>('HIGHLAND_HOSTS_ENVIRONMENT'),
       gitCommit: this.get<string>('GIT_COMMIT'),
       gitRef: this.get<string>('GIT_REF'),
       httpSecret: this.get<string>('HTTP_SECRET'),

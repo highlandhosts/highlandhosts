@@ -38,4 +38,4 @@ The `TWILIO_VERIFY_SERVICE_SID` env var is already reused — no new env vars ar
 
 ### 5. Local development
 
-In local mode (`SKYE_ENVIRONMENT=local`) Twilio is bypassed entirely — use code `000000` to verify any email address during development.
+In local mode (`HIGHLAND_HOSTS_ENVIRONMENT=local`) Twilio is bypassed entirely — use code `000000` to verify any email address during development.

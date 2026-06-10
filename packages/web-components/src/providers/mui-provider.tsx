@@ -5,7 +5,9 @@ import { unstable_ClassNameGenerator as ClassNameGenerator } from '@mui/material
 import { Environments } from '@repo/common';
 import type { ReactNode } from 'react';
 
-if (process.env.NEXT_PUBLIC_SKYE_ENVIRONMENT !== Environments.PRODUCTION) {
+if (
+  process.env.NEXT_PUBLIC_HIGHLAND_HOSTS_ENVIRONMENT !== Environments.PRODUCTION
+) {
   ClassNameGenerator.configure((componentName) => componentName);
 }
 

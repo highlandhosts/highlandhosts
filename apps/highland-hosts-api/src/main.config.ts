@@ -11,7 +11,7 @@ import { DtoValidationError } from './dto-validation-error';
 import { LoggerService } from './modules/common/providers';
 
 export function mainConfig(app: INestApplication) {
-  const isLocal = process.env.SKYE_ENVIRONMENT === Environments.LOCAL;
+  const isLocal = process.env.HIGHLAND_HOSTS_ENVIRONMENT === Environments.LOCAL;
   app.useLogger(app.get(LoggerService));
   app.use([
     helmet(),

@@ -27,7 +27,7 @@ export default defineConfig({
       env: {
         API_URL: "http://localhost:3003",
         SENTRY_DSN: "",
-        SKYE_ENVIRONMENT: "test",
+        HIGHLAND_HOSTS_ENVIRONMENT: "test",
       },
     },
   ],

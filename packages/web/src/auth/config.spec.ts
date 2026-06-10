@@ -20,11 +20,12 @@ describe("createAuthConfig", () => {
     mockFetch.mockReset();
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     delete (globalThis as any).__auth_refresh_state;
-    process.env.NEXT_PUBLIC_SKYE_HOSTS_API_URL = "https://api.highlandhosts.uk";
+    process.env.NEXT_PUBLIC_HIGHLAND_HOSTS_API_URL =
+      "https://api.highlandhosts.uk";
   });
 
   afterEach(() => {
-    delete process.env.NEXT_PUBLIC_SKYE_HOSTS_API_URL;
+    delete process.env.NEXT_PUBLIC_HIGHLAND_HOSTS_API_URL;
   });
 
   describe("session configuration", () => {

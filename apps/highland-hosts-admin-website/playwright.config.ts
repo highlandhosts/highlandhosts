@@ -15,9 +15,9 @@ export default defineConfig({
     reuseExistingServer: true,
     timeout: 60_000,
     env: {
-      NEXT_PUBLIC_SKYE_HOSTS_API_URL: "http://localhost:3003",
+      NEXT_PUBLIC_HIGHLAND_HOSTS_API_URL: "http://localhost:3003",
       NEXTAUTH_SECRET: "test-secret",
-      NEXT_PUBLIC_SKYE_ENVIRONMENT: "ci",
+      NEXT_PUBLIC_HIGHLAND_HOSTS_ENVIRONMENT: "ci",
     },
   },
 });

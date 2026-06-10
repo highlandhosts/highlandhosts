@@ -29,7 +29,7 @@ export const env = {
     return extra["SENTRY_DSN"] as string | undefined;
   },
   get skyeEnvironment() {
-    return requireEnv("SKYE_ENVIRONMENT");
+    return requireEnv("HIGHLAND_HOSTS_ENVIRONMENT");
   },
   get logLevel() {
     return extra["LOG_LEVEL"] as string | undefined;

@@ -5,11 +5,12 @@ const mockPayload = { id: 1, name: 'Test' };
 
 beforeEach(() => {
   jest.restoreAllMocks();
-  process.env.NEXT_PUBLIC_SKYE_HOSTS_API_URL = 'https://api.highlandhosts.uk';
+  process.env.NEXT_PUBLIC_HIGHLAND_HOSTS_API_URL =
+    'https://api.highlandhosts.uk';
 });
 
 afterEach(() => {
-  delete process.env.NEXT_PUBLIC_SKYE_HOSTS_API_URL;
+  delete process.env.NEXT_PUBLIC_HIGHLAND_HOSTS_API_URL;
 });
 
 describe('fetchApi', () => {

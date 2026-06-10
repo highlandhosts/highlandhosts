@@ -152,7 +152,8 @@ export function BookingPaymentSection({
   dateRange,
 }: BookingPaymentSectionProps) {
   const isDev =
-    process.env.NEXT_PUBLIC_SKYE_ENVIRONMENT !== Environments.PRODUCTION;
+    process.env.NEXT_PUBLIC_HIGHLAND_HOSTS_ENVIRONMENT !==
+    Environments.PRODUCTION;
 
   const nightsCount = quote?.nights.length ?? 0;
   const avgNightlyPence =
