@@ -49,6 +49,14 @@ jobs:
           eas-version: latest
           token: ${{ secrets.EXPO_TOKEN }}
 
+      - name: Verify Expo login
+        working-directory: apps/highland-hosts-app
+        run: |
+          eas whoami
+          eas project:info
+        env:
+          EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
+
       - name: Run EAS Build
         run: eas build --platform ${{ inputs.platform }} --profile ${{ inputs.profile }} --non-interactive
         working-directory: apps/highland-hosts-app
